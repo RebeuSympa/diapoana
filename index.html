@@ -3,15 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Mission : Compagnon Interactif & Logements</title>
+    <title>The Mission : Compagnon Ultime & Interactif</title>
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Librairie de confettis pour l'Easter Egg -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.min.js"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Hind:wght@400;600;700&display=swap');
         body { font-family: 'Hind', sans-serif; }
         .slide-section { display: none; }
         .slide-section.active { display: block; }
+        /* Effet Polaroid */
+        .polaroid {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .polaroid:hover {
+            transform: scale(1.05) rotate(2deg);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2);
+        }
     </style>
 </head>
 <body class="bg-[#fcf1de] text-[#000d2d] leading-relaxed">
@@ -21,10 +31,16 @@
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
             <div class="flex items-center space-x-3">
                 <i class="fa-solid fa-plane-departure text-2xl text-[#fa4e05]"></i>
-                <span class="text-xl font-extrabold tracking-wide">THE MISSION — Live Companion</span>
+                <span class="text-xl font-extrabold tracking-wide">THE MISSION — Ultimate Edition</span>
             </div>
-            <div class="text-xs bg-[#fa4e05] text-white px-3 py-1.5 rounded-full font-bold uppercase tracking-wider">
-                Étape : <span id="currentStepName">1. Introduction</span>
+            <div class="flex items-center space-x-3">
+                <!-- Bouton Easter Egg Confettis -->
+                <button onclick="triggerConfetti()" class="bg-[#fa4e05] hover:bg-[#ba3208] text-white text-xs px-3 py-1.5 rounded-full font-bold shadow transition flex items-center gap-1">
+                    <i class="fa-solid fa-wand-magic-sparkles"></i> Mode VIP 
+                </button>
+                <div class="text-xs bg-white/10 text-white px-3 py-1.5 rounded-full font-bold uppercase tracking-wider hidden sm:block">
+                    Étape : <span id="currentStepName">1. Introduction</span>
+                </div>
             </div>
         </div>
     </header>
@@ -34,10 +50,11 @@
         <div class="container mx-auto px-6 flex justify-start md:justify-center gap-2 min-w-max">
             <button onclick="showSlide(1)" id="btn-1" class="slide-btn px-4 py-2 text-xs font-bold rounded-lg bg-[#000d2d] text-white transition shadow">1. Intro</button>
             <button onclick="showSlide(2)" id="btn-2" class="slide-btn px-4 py-2 text-xs font-bold rounded-lg bg-slate-200 text-[#000d2d] hover:bg-slate-300 transition">2. Cahier des Charges</button>
-            <button onclick="showSlide(3)" id="btn-3" class="slide-btn px-4 py-2 text-xs font-bold rounded-lg bg-slate-200 text-[#000d2d] hover:bg-slate-300 transition">3. Les Bagages</button>
+            <button onclick="showSlide(3)" id="btn-3" class="slide-btn px-4 py-2 text-xs font-bold rounded-lg bg-slate-200 text-[#000d2d] hover:bg-slate-300 transition">3. Les Bagages & Polaroids</button>
             <button onclick="showSlide(4)" id="btn-4" class="slide-btn px-4 py-2 text-xs font-bold rounded-lg bg-slate-200 text-[#000d2d] hover:bg-slate-300 transition">4. Montréal & Logements</button>
             <button onclick="showSlide(5)" id="btn-5" class="slide-btn px-4 py-2 text-xs font-bold rounded-lg bg-slate-200 text-[#000d2d] hover:bg-slate-300 transition">5. New York & Logements</button>
-            <button onclick="showSlide(6)" id="btn-6" class="slide-btn px-4 py-2 text-xs font-bold rounded-lg bg-slate-200 text-[#000d2d] hover:bg-slate-300 transition">6. Benchmark & Scores</button>
+            <button onclick="showSlide(6)" id="btn-6" class="slide-btn px-4 py-2 text-xs font-bold rounded-lg bg-slate-200 text-[#000d2d] hover:bg-slate-300 transition">6. Budget & Folies</button>
+            <button onclick="showSlide(7)" id="btn-7" class="slide-btn px-4 py-2 text-xs font-bold rounded-lg bg-slate-200 text-[#000d2d] hover:bg-slate-300 transition">7. Benchmark</button>
         </div>
     </section>
 
@@ -57,16 +74,29 @@
             </div>
         </div>
 
-        <!-- SLIDE 2 -->
+        <!-- SLIDE 2 : CAHIER DES CHARGES INTERACTIF -->
         <div id="slide-2" class="slide-section bg-white p-8 rounded-2xl shadow-xl border-2 border-[#000d2d]">
             <span class="text-xs font-bold text-[#fa4e05] uppercase bg-[#fcf1de] px-3 py-1 rounded">Slide 6</span>
             <h2 class="text-3xl font-extrabold mt-3 mb-4 text-[#000d2d]">Le Cahier des Charges 🏎️🏒</h2>
-            <p class="text-slate-700 mb-6 font-medium">Objectif : Finir sur Netflix. Pour valider le voyage, conditions obligatoires :</p>
-            <div class="grid grid-cols-2 gap-4 mb-6">
-                <div class="p-4 bg-[#fcf1de] rounded-xl border-2 border-[#000d2d] font-bold text-center">🏎️ F1</div>
-                <div class="p-4 bg-[#fcf1de] rounded-xl border-2 border-[#000d2d] font-bold text-center">🏒 Hockey</div>
-                <div class="p-4 bg-[#fcf1de] rounded-xl border-2 border-[#000d2d] font-bold text-center">🍜 Bouffe indécente</div>
-                <div class="p-4 bg-[#fcf1de] rounded-xl border-2 border-[#000d2d] font-bold text-center">❤️ Moments à deux</div>
+            <p class="text-slate-700 mb-4 font-medium">Objectif : Finir sur Netflix. Coche les objectifs remplis au fur et à mesure :</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                <label class="p-4 bg-[#fcf1de] rounded-xl border-2 border-[#000d2d] flex items-center space-x-3 cursor-pointer hover:bg-[#fa4e05]/10 transition">
+                    <input type="checkbox" class="w-5 h-5 accent-[#fa4e05]">
+                    <span class="font-bold">🏎️ F1 (Grand Prix du Canada)</span>
+                </label>
+                <label class="p-4 bg-[#fcf1de] rounded-xl border-2 border-[#000d2d] flex items-center space-x-3 cursor-pointer hover:bg-[#fa4e05]/10 transition">
+                    <input type="checkbox" class="w-5 h-5 accent-[#fa4e05]">
+                    <span class="font-bold">🏒 Hockey (Match NHL Centre Bell)</span>
+                </label>
+                <label class="p-4 bg-[#fcf1de] rounded-xl border-2 border-[#000d2d] flex items-center space-x-3 cursor-pointer hover:bg-[#fa4e05]/10 transition">
+                    <input type="checkbox" class="w-5 h-5 accent-[#fa4e05]">
+                    <span class="font-bold">🍜 Bouffe indécente (Poutine & Bagels)</span>
+                </label>
+                <label class="p-4 bg-[#fcf1de] rounded-xl border-2 border-[#000d2d] flex items-center space-x-3 cursor-pointer hover:bg-[#fa4e05]/10 transition">
+                    <input type="checkbox" class="w-5 h-5 accent-[#fa4e05]">
+                    <span class="font-bold">❤️ Moments à deux & Date Night</span>
+                </label>
             </div>
             <p class="text-xs font-bold text-slate-500 text-center uppercase tracking-wide">Difficulté : Impossible. Challenge accepted.</p>
             <div class="mt-8 flex justify-between">
@@ -75,17 +105,35 @@
             </div>
         </div>
 
-        <!-- SLIDE 3 -->
+        <!-- SLIDE 3 : LES BAGAGES & POLAROIDS -->
         <div id="slide-3" class="slide-section bg-white p-8 rounded-2xl shadow-xl border-2 border-[#000d2d]">
             <span class="text-xs font-bold text-[#fa4e05] uppercase bg-[#fcf1de] px-3 py-1 rounded">Slide 7</span>
-            <h2 class="text-3xl font-extrabold mt-3 mb-4 text-[#000d2d]">🧳 What's in our bag?</h2>
-            <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mb-6">
-                <div class="p-4 bg-slate-50 rounded-xl border text-center font-semibold text-sm shadow-sm">🧢 Casquette de Macker</div>
-                <div class="p-4 bg-slate-50 rounded-xl border text-center font-semibold text-sm shadow-sm">🏒 Bonnet des Canadiens</div>
-                <div class="p-4 bg-slate-50 rounded-xl border text-center font-semibold text-sm shadow-sm">📸 Polaroid (crari insta)</div>
-                <div class="p-4 bg-slate-50 rounded-xl border text-center font-semibold text-sm shadow-sm">🥤 Red Bull Coco Acaï</div>
-                <div class="p-4 bg-slate-50 rounded-xl border text-center font-semibold text-sm shadow-sm">🛂 Passeports (très important)</div>
+            <h2 class="text-3xl font-extrabold mt-3 mb-2 text-[#000d2d]">🧳 What's in our bag? (Polaroids)</h2>
+            <p class="text-slate-600 text-sm mb-6">Survole les souvenirs instantanés pour les inspecter :</p>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-6">
+                <!-- Polaroid 1 -->
+                <div class="polaroid bg-white p-3 pb-6 rounded shadow border border-slate-300 text-center">
+                    <img src="https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=300&q=80" class="w-full h-32 object-cover mb-2 rounded-sm" alt="Casquette">
+                    <span class="text-xs font-bold text-slate-700">Casquette Macker</span>
+                </div>
+                <!-- Polaroid 2 -->
+                <div class="polaroid bg-white p-3 pb-6 rounded shadow border border-slate-300 text-center">
+                    <img src="https://images.unsplash.com/photo-1515238152791-8216bfdf89a7?auto=format&fit=crop&w=300&q=80" class="w-full h-32 object-cover mb-2 rounded-sm" alt="Red Bull">
+                    <span class="text-xs font-bold text-slate-700">Coco Acaï Supply</span>
+                </div>
+                <!-- Polaroid 3 -->
+                <div class="polaroid bg-white p-3 pb-6 rounded shadow border border-slate-300 text-center">
+                    <img src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&fit=crop&w=300&q=80" class="w-full h-32 object-cover mb-2 rounded-sm" alt="Polaroid">
+                    <span class="text-xs font-bold text-slate-700">Mode Crari Insta</span>
+                </div>
+                <!-- Polaroid 4 -->
+                <div class="polaroid bg-white p-3 pb-6 rounded shadow border border-slate-300 text-center">
+                    <img src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?auto=format&fit=crop&w=300&q=80" class="w-full h-32 object-cover mb-2 rounded-sm" alt="Passeport">
+                    <span class="text-xs font-bold text-slate-700">Passeports VIP</span>
+                </div>
             </div>
+
             <div class="mt-8 flex justify-between">
                 <button onclick="showSlide(2)" class="text-slate-600 font-bold text-sm">⬅️ Précédent</button>
                 <button onclick="showSlide(4)" class="bg-[#fa4e05] hover:bg-[#ba3208] text-white px-6 py-3 rounded-full font-bold text-sm shadow transition">Suivant ➡️</button>
@@ -164,12 +212,42 @@
 
             <div class="mt-8 flex justify-between">
                 <button onclick="showSlide(4)" class="text-slate-600 font-bold text-sm">⬅️ Précédent</button>
-                <button onclick="showSlide(6)" class="bg-[#fa4e05] hover:bg-[#ba3208] text-white px-6 py-3 rounded-full font-bold text-sm shadow transition">Découvrir le Benchmark ➡️</button>
+                <button onclick="showSlide(6)" class="bg-[#fa4e05] hover:bg-[#ba3208] text-white px-6 py-3 rounded-full font-bold text-sm shadow transition">Suivant (Budget) ➡️</button>
             </div>
         </div>
 
-        <!-- SLIDE 6 : BENCHMARK INTERACTIF -->
+        <!-- SLIDE 6 : BUDGET & FOLIES (NOUVEAUTÉ) -->
         <div id="slide-6" class="slide-section bg-white p-8 rounded-2xl shadow-xl border-2 border-[#000d2d]">
+            <span class="text-xs font-bold text-[#fa4e05] uppercase bg-[#fcf1de] px-3 py-1 rounded">Dépenses & Folies</span>
+            <h2 class="text-3xl font-extrabold mt-3 mb-2 text-[#000d2d]">💸 Jauge de Budget (Version Humour)</h2>
+            <p class="text-slate-600 text-sm mb-6">Simule le coût estimé des Red Bull Coco Acaï et des tickets de F1 :</p>
+
+            <div class="bg-[#fcf1de] p-5 rounded-xl border-2 border-[#000d2d] mb-6 shadow-sm">
+                <label for="budgetRange" class="block font-bold text-sm text-[#000d2d] mb-2">
+                    Consommation de Red Bull par jour : <span id="valRedBull" class="text-[#fa4e05] font-extrabold">3</span> canettes
+                </label>
+                <input type="range" id="budgetRange" min="1" max="10" step="1" value="3" class="w-full accent-[#fa4e05]">
+            </div>
+
+            <div class="grid grid-cols-2 gap-4 text-center mb-6">
+                <div class="bg-slate-50 p-4 rounded-xl border shadow-sm">
+                    <span class="text-xs font-bold text-slate-500 uppercase">Budget Red Bull / Semaine</span>
+                    <span id="resRedBullCost" class="text-2xl font-black block text-[#fa4e05] mt-1">42 €</span>
+                </div>
+                <div class="bg-slate-50 p-4 rounded-xl border shadow-sm">
+                    <span class="text-xs font-bold text-slate-500 uppercase">Niveau de Surdosage</span>
+                    <span id="resEnergy" class="text-2xl font-black block text-emerald-600 mt-1">🚀 Prêt pour la F1</span>
+                </div>
+            </div>
+
+            <div class="mt-8 flex justify-between">
+                <button onclick="showSlide(5)" class="text-slate-600 font-bold text-sm">⬅️ Précédent</button>
+                <button onclick="showSlide(7)" class="bg-[#fa4e05] hover:bg-[#ba3208] text-white px-6 py-3 rounded-full font-bold text-sm shadow transition">Découvrir le Benchmark ➡️</button>
+            </div>
+        </div>
+
+        <!-- SLIDE 7 : BENCHMARK INTERACTIF -->
+        <div id="slide-7" class="slide-section bg-white p-8 rounded-2xl shadow-xl border-2 border-[#000d2d]">
             <span class="text-xs font-bold text-[#fa4e05] uppercase bg-[#fcf1de] px-3 py-1 rounded">Slides 18 à 21</span>
             <h2 class="text-3xl font-extrabold mt-3 mb-2 text-[#000d2d]">📊 Benchmark & Scores du Projet</h2>
             <p class="text-slate-600 text-sm mb-6">Glisse le curseur pour ajuster l'intensité du voyage et voir l'impact en temps réel !</p>
@@ -186,7 +264,7 @@
             <div class="grid grid-cols-2 gap-4 text-center">
                 <div class="bg-slate-50 p-4 rounded-xl border shadow-sm">
                     <span class="text-xs font-bold text-slate-500 uppercase">Taux de compatibilité</span>
-                    <span id="resCompat" class="text-2xl font-black block text-[#fa4e05] mt-1">98,7 %</span>
+                    <span id="resCompat" class="text-2xl font-black block text-[#fa4e05] mt-1">100 %</span>
                 </div>
                 <div class="bg-slate-50 p-4 rounded-xl border shadow-sm">
                     <span class="text-xs font-bold text-slate-500 uppercase">Potentiel de bonheur</span>
@@ -207,13 +285,13 @@
             </div>
             
             <div class="mt-6 text-left">
-                <button onclick="showSlide(5)" class="text-slate-600 font-bold text-sm">⬅️ Précédent</button>
+                <button onclick="showSlide(6)" class="text-slate-600 font-bold text-sm">⬅️ Précédent</button>
             </div>
         </div>
 
     </main>
 
-    <!-- Script de navigation et benchmark -->
+    <!-- Script de navigation, benchmark, budget et easter egg -->
     <script>
         const stepNames = {
             1: "1. Intro",
@@ -221,7 +299,8 @@
             3: "3. Les Bagages",
             4: "4. Montréal",
             5: "5. New York",
-            6: "6. Benchmark"
+            6: "6. Budget & Folies",
+            7: "7. Benchmark"
         };
 
         function showSlide(n) {
@@ -240,6 +319,16 @@
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
+        // Effet Confettis (Mode VIP)
+        function triggerConfetti() {
+            confetti({
+                particleCount: 100,
+                spread: 70,
+                origin: { y: 0.6 }
+            });
+        }
+
+        // Logique du Benchmark (Compatibilité bloquée à 100% min)
         const range = document.getElementById('intensityRange');
         const valIntensity = document.getElementById('valIntensity');
         const resCompat = document.getElementById('resCompat');
@@ -250,13 +339,34 @@
             const val = e.target.value;
             valIntensity.textContent = val;
             
-            let compat = Math.min(Math.round(98.7 * (val / 100) * 10) / 10, 100);
+            let compat = Math.max(100, Math.round(98.7 * (val / 100) * 10) / 10);
+            if (val > 100) compat = Math.min(100 + Math.round((val - 100) / 5), 110);
+
             let bonheur = Math.round(143 * (val / 100));
-            let global = Math.min(Math.round(101.8 * (val / 100) * 10) / 10, 999);
+            let global = Math.max(101.8, Math.round(101.8 * (val / 100) * 10) / 10);
 
             resCompat.textContent = compat + ' %';
             resBonheur.textContent = '+ ' + bonheur + ' %';
             resGlobal.textContent = global + ' %';
+        });
+
+        // Logique de la jauge budget Red Bull
+        const budgetRange = document.getElementById('budgetRange');
+        const valRedBull = document.getElementById('valRedBull');
+        const resRedBullCost = document.getElementById('resRedBullCost');
+        const resEnergy = document.getElementById('resEnergy');
+
+        budgetRange.addEventListener('input', (e) => {
+            const count = e.target.value;
+            valRedBull.textContent = count;
+            resRedBullCost.textContent = (count * 2 * 7) + ' €'; // ex: 2€ par canette sur 7 jours
+            if (count > 7) {
+                resEnergy.textContent = "⚡ Alerte tachycardie assurée";
+            } else if (count > 4) {
+                resEnergy.textContent = "🔥 Mode Turbo Activé";
+            } else {
+                resEnergy.textContent = "🚀 Prêt pour la F1";
+            }
         });
     </script>
 
