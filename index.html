@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Mission : Montréal & New York - Annexe Officielle</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Hind:wght@400;600;700&display=swap');
+        body { font-family: 'Hind', sans-serif; }
+    </style>
+</head>
+<body class="bg-[#fcf1de] text-[#000d2d] leading-relaxed">
+
+    <!-- Header / Navigation -->
+    <header class="bg-[#000d2d] text-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <i class="fa-solid fa-plane-departure text-2xl text-[#fa4e05]"></i>
+                <span class="text-xl font-bold tracking-wide">THE MISSION — Annexe Diapo (1-21)</span>
+            </div>
+            <nav class="hidden md:flex space-x-6 text-sm font-semibold">
+                <a href="#bag" class="hover:text-[#fa4e05] transition">What's in our bag</a>
+                <a href="#destinations" class="hover:text-[#fa4e05] transition">Logements & Villes</a>
+                <a href="#anecdotes" class="hover:text-[#fa4e05] transition">Anecdotes & Vibes</a>
+                <a href="#simulateur" class="hover:text-[#fa4e05] transition">The Score</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative bg-[#000d2d] text-white py-24 overflow-hidden">
+        <div class="absolute inset-0 opacity-30">
+            <img src="https://images.unsplash.com/photo-1508739773434-c26b3d09e071?auto=format&fit=crop&w=1920&q=80" alt="New York Montréal" class="w-full h-full object-cover">
+        </div>
+        <div class="container mx-auto px-6 text-center relative z-10">
+            <span class="bg-[#fa4e05] text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Objectif : Finir sur Netflix 🎬</span>
+            <h1 class="text-4xl md:text-6xl font-extrabold mt-4 mb-4">ON FAIT QUOIIIIII ?</h1>
+            <p class="text-lg md:text-xl text-[#fcf1de] max-w-2xl mx-auto mb-8">
+                F1, Hockey, bouffe indécente, Red Bull Coco Acaï et moments à deux. Difficulté : Impossible. Challenge accepted[cite: 1].
+            </p>
+            <a href="#destinations" class="bg-[#fa4e05] hover:bg-[#ba3208] text-white font-bold px-8 py-3 rounded-full shadow-lg transition transform hover:-translate-y-0.5 inline-block">
+                Découvrir le plan de vol
+            </a>
+        </div>
+    </section>
+
+    <!-- Section What's in our bag (Slide 7) -->
+    <section id="bag" class="py-16 container mx-auto px-6">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl font-extrabold text-[#000d2d]">🧳 What's in our bag?</h2>
+            <p class="text-slate-700 mt-2">Les indispensables pour survivre au voyage (façon flat lay)[cite: 1]</p>
+        </div>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+            <div class="bg-white p-4 rounded-xl shadow border-2 border-[#000d2d] text-center">
+                <i class="fa-solid fa-cap text-3xl text-[#fa4e05] mb-2"></i>
+                <h4 class="font-bold text-sm">Casquette & Bonnet des Canadiens</h4>
+                <p class="text-xs text-slate-500 mt-1">Pour faire genre on s'y connaît[cite: 1]</p>
+            </div>
+            <div class="bg-white p-4 rounded-xl shadow border-2 border-[#000d2d] text-center">
+                <i class="fa-solid fa-camera text-3xl text-[#fa4e05] mb-2"></i>
+                <h4 class="font-bold text-sm">Polaroid & AirPods</h4>
+                <p class="text-xs text-slate-500 mt-1">Crari insta & vibe musicale[cite: 1]</p>
+            </div>
+            <div class="bg-white p-4 rounded-xl shadow border-2 border-[#000d2d] text-center">
+                <i class="fa-solid fa-glass-water text-3xl text-[#fa4e05] mb-2"></i>
+                <h4 class="font-bold text-sm">Red Bull Coco Acaï</h4>
+                <p class="text-xs text-slate-500 mt-1">Évidemment indispensable[cite: 1]</p>
+            </div>
+            <div class="bg-white p-4 rounded-xl shadow border-2 border-[#000d2d] text-center">
+                <i class="fa-solid fa-passport text-3xl text-[#fa4e05] mb-2"></i>
+                <h4 class="font-bold text-sm">Passeports</h4>
+                <p class="text-xs text-slate-500 mt-1">"Un peu important... sans ça pas de poutine !"[cite: 1]</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Destinations & Logements Potentiels -->
+    <section id="destinations" class="bg-white py-16 border-y-2 border-[#000d2d]">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-extrabold text-[#000d2d]">🗺️ La Destination : Deux villes, deux ambiances</h2>
+                <p class="text-slate-700 mt-2">Parce qu'une seule ville, c'était visiblement trop simple[cite: 1].</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-10">
+                <!-- Montréal -->
+                <div class="bg-[#fcf1de] rounded-2xl overflow-hidden shadow-lg border-2 border-[#000d2d]">
+                    <img src="https://images.unsplash.com/photo-1519178614-686fdbefaf1b?auto=format&fit=crop&w=800&q=80" alt="Montréal" class="h-56 w-full object-cover">
+                    <div class="p-8">
+                        <span class="bg-[#fa4e05] text-white text-xs font-bold px-3 py-1 rounded">Étape 1 🇨🇦</span>
+                        <h3 class="text-2xl font-bold mt-3 mb-2">Montréal : F1 & Poutine</h3>
+                        <p class="text-sm text-slate-700 mb-4">
+                            Grand Prix du Canada, entendre les moteurs vrombir, manger des smoked meats, des bagels montréalais et crier à chaque bagarre au Centre Bell[cite: 1] !
+                        </p>
+                        <div class="bg-white p-4 rounded-xl border border-slate-300">
+                            <h4 class="font-bold text-xs uppercase text-[#fa4e05] mb-1">🏡 Logement potentiel repéré :</h4>
+                            <p class="text-sm font-semibold">Loft cosy au cœur du Vieux-Montréal avec brique apparente et vue sur la rue enneigée / lumineuse.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- New York -->
+                <div class="bg-[#fcf1de] rounded-2xl overflow-hidden shadow-lg border-2 border-[#000d2d]">
+                    <img src="https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?auto=format&fit=crop&w=800&q=80" alt="New York" class="h-56 w-full object-cover">
+                    <div class="p-8">
+                        <span class="bg-[#fa4e05] text-white text-xs font-bold px-3 py-1 rounded">Étape 2 🇺🇸</span>
+                        <h3 class="text-2xl font-bold mt-3 mb-2">New York : The Big Apple</h3>
+                        <p class="text-sm text-slate-700 mb-4">
+                            Manhattan illuminée, Times Square, Central Park, match des NY Rangers, burgers de folie et "Date Night" sans destination précise[cite: 1].
+                        </p>
+                        <div class="bg-white p-4 rounded-xl border border-slate-300">
+                            <h4 class="font-bold text-xs uppercase text-[#fa4e05] mb-1">🏡 Logement potentiel repéré :</h4>
+                            <p class="text-sm font-semibold">Appartement design à Manhattan avec rooftop et vue imprenable sur les gratte-ciels illuminés.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Anecdotes & Vibes -->
+    <section id="anecdotes" class="py-16 container mx-auto px-6 max-w-4xl">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl font-extrabold text-[#000d2d]">💡 Anecdotes & Petites vérités</h2>
+            <p class="text-slate-700 mt-2">Ce qui est écrit dans les slides (et ce qui va vraiment se passer).</p>
+        </div>
+        <div class="space-y-6">
+            <div class="bg-white border-l-8 border-[#fa4e05] p-6 rounded-r-xl shadow-md">
+                <h3 class="font-bold text-[#000d2d] text-lg flex items-center gap-2">
+                    <i class="fa-solid fa-hockey-puck text-[#fa4e05]"></i> Le Hockey sans rien y comprendre
+                </h3>
+                <p class="text-slate-700 text-sm mt-2">
+                    "Disclaimer : Je ne comprendrai probablement rien aux règles au début. Mais je crierai à chaque bagarre comme un vrai zizi" (Extrait officiel de la Slide 11)[cite: 1].
+                </p>
+            </div>
+            <div class="bg-white border-l-8 border-[#000d2d] p-6 rounded-r-xl shadow-md">
+                <h3 class="font-bold text-[#000d2d] text-lg flex items-center gap-2">
+                    <i class="fa-solid fa-utensils text-[#fa4e05]"></i> La règle d'or de la bouffe
+                </h3>
+                <p class="text-slate-700 text-sm mt-2">
+                    Règle absolue validée par Big Mamma : <em>"Calories don't count on vacation"</em>. Poutines, sandwiches, brunchs et desserts XXL obligatoires[cite: 1].
+                </p>
+            </div>
+            <div class="bg-white border-l-8 border-[#ef9e9a] p-6 rounded-r-xl shadow-md">
+                <h3 class="font-bold text-[#000d2d] text-lg flex items-center gap-2">
+                    <i class="fa-solid fa-heart text-[#fa4e05]"></i> Date Night — New York After Dark
+                </h3>
+                <p class="text-slate-700 text-sm mt-2">
+                    "No plans. Just us." Un verre, un bon resto, marcher sans destination, des photos et nous deux (Slide 15 & 17)[cite: 1].
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Simulateur de Scores / Chiffres (Slide 18) -->
+    <section id="simulateur" class="bg-[#000d2d] text-white py-16">
+        <div class="container mx-auto px-6 max-w-3xl text-center">
+            <h2 class="text-3xl font-extrabold mb-2">🏆 FINAL SCORE (Slide 18)</h2>
+            <p class="text-[#fcf1de] text-sm mb-8">Le taux de réussite officiel du projet calculé selon les standards SKEMA[cite: 1]</p>
+            
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-6 text-center">
+                <div class="bg-white/10 p-6 rounded-xl border border-white/20">
+                    <span class="block text-xs uppercase tracking-wider text-[#fa4e05] font-bold">Compatibilité</span>
+                    <span class="text-3xl font-black mt-2 block">98,7 %</span>
+                </div>
+                <div class="bg-white/10 p-6 rounded-xl border border-white/20">
+                    <span class="block text-xs uppercase tracking-wider text-[#fa4e05] font-bold">Bonheur anticipé</span>
+                    <span class="text-3xl font-black mt-2 block">+ 143 %</span>
+                </div>
+                <div class="bg-white/10 p-6 rounded-xl border border-white/20">
+                    <span class="block text-xs uppercase tracking-wider text-[#fa4e05] font-bold">Gastronomie</span>
+                    <span class="text-3xl font-black mt-2 block">11/10</span>
+                </div>
+                <div class="bg-white/10 p-6 rounded-xl border border-white/20">
+                    <span class="block text-xs uppercase tracking-wider text-[#fa4e05] font-bold">Moments à deux</span>
+                    <span class="text-3xl font-black mt-2 block">∞ %</span>
+                </div>
+                <div class="bg-white/10 p-6 rounded-xl border border-white/20">
+                    <span class="block text-xs uppercase tracking-wider text-[#fa4e05] font-bold">Envie de rentrer</span>
+                    <span class="text-3xl font-black mt-2 block">0 %</span>
+                </div>
+                <div class="bg-[#fa4e05] p-6 rounded-xl text-white">
+                    <span class="block text-xs uppercase tracking-wider font-bold">Score Global</span>
+                    <span class="text-3xl font-black mt-2 block">101,8 %</span>
+                </div>
+            </div>
+            
+            <div class="mt-12 text-sm text-[#fcf1de]">
+                <p>Conclusion (Slide 20) : C’est ciao mon doudouwww ❤️[cite: 1]</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#000d2d] text-slate-400 py-6 text-center text-xs border-t border-white/10">
+        <p>Site annexe généré sur-mesure pour ton diapo (jusqu'à la slide 21) — Prêts pour la grosse pomme 🍏[cite: 1].</p>
+    </footer>
+
+</body>
+</html>
