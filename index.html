@@ -1,21 +1,19 @@
 <!DOCTYPE html>
 <html lang="fr">
-    
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>La Mission: Que tu gardes ton nez</title>
+    <title>The Mission : GARDE TON NEZ</title>
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Librairie de confettis pour l'Easter Egg -->
+    <!-- Librairie de confettis -->
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.min.js"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Hind:wght@400;600;700&display=swap');
         body { font-family: 'Hind', sans-serif; }
         .slide-section { display: none; }
         .slide-section.active { display: block; }
-        /* Effet Polaroid */
         .polaroid {
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
@@ -35,7 +33,6 @@
                 <span class="text-xl font-extrabold tracking-wide">THE MISSION — Ultimate Edition</span>
             </div>
             <div class="flex items-center space-x-3">
-                <!-- Bouton Easter Egg Confettis -->
                 <button onclick="triggerConfetti()" class="bg-[#fa4e05] hover:bg-[#ba3208] text-white text-xs px-3 py-1.5 rounded-full font-bold shadow transition flex items-center gap-1">
                     <i class="fa-solid fa-wand-magic-sparkles"></i> Mode VIP 
                 </button>
@@ -46,12 +43,12 @@
         </div>
     </header>
 
-    <!-- Barre de télécommande (Anti-spoiler) -->
+    <!-- Barre de télécommande -->
     <section class="bg-white border-b-2 border-[#000d2d] py-3 shadow-md sticky top-[72px] z-40 overflow-x-auto">
         <div class="container mx-auto px-6 flex justify-start md:justify-center gap-2 min-w-max">
             <button onclick="showSlide(1)" id="btn-1" class="slide-btn px-4 py-2 text-xs font-bold rounded-lg bg-[#000d2d] text-white transition shadow">1. Intro</button>
             <button onclick="showSlide(2)" id="btn-2" class="slide-btn px-4 py-2 text-xs font-bold rounded-lg bg-slate-200 text-[#000d2d] hover:bg-slate-300 transition">2. Cahier des Charges</button>
-            <button onclick="showSlide(3)" id="btn-3" class="slide-btn px-4 py-2 text-xs font-bold rounded-lg bg-slate-200 text-[#000d2d] hover:bg-slate-300 transition">3. Les Bagages & Polaroids</button>
+            <button onclick="showSlide(3)" id="btn-3" class="slide-btn px-4 py-2 text-xs font-bold rounded-lg bg-slate-200 text-[#000d2d] hover:bg-slate-300 transition">3. Bagages & Polaroids</button>
             <button onclick="showSlide(4)" id="btn-4" class="slide-btn px-4 py-2 text-xs font-bold rounded-lg bg-slate-200 text-[#000d2d] hover:bg-slate-300 transition">4. Montréal & Logements</button>
             <button onclick="showSlide(5)" id="btn-5" class="slide-btn px-4 py-2 text-xs font-bold rounded-lg bg-slate-200 text-[#000d2d] hover:bg-slate-300 transition">5. New York & Logements</button>
             <button onclick="showSlide(6)" id="btn-6" class="slide-btn px-4 py-2 text-xs font-bold rounded-lg bg-slate-200 text-[#000d2d] hover:bg-slate-300 transition">6. Budget & Folies</button>
@@ -75,7 +72,7 @@
             </div>
         </div>
 
-        <!-- SLIDE 2 : CAHIER DES CHARGES INTERACTIF -->
+        <!-- SLIDE 2 : CAHIER DES CHARGES -->
         <div id="slide-2" class="slide-section bg-white p-8 rounded-2xl shadow-xl border-2 border-[#000d2d]">
             <span class="text-xs font-bold text-[#fa4e05] uppercase bg-[#fcf1de] px-3 py-1 rounded">Slide 6</span>
             <h2 class="text-3xl font-extrabold mt-3 mb-4 text-[#000d2d]">Le Cahier des Charges 🏎️🏒</h2>
@@ -106,29 +103,25 @@
             </div>
         </div>
 
-        <!-- SLIDE 3 : LES BAGAGES & POLAROIDS -->
+        <!-- SLIDE 3 : BAGAGES & POLAROIDS -->
         <div id="slide-3" class="slide-section bg-white p-8 rounded-2xl shadow-xl border-2 border-[#000d2d]">
             <span class="text-xs font-bold text-[#fa4e05] uppercase bg-[#fcf1de] px-3 py-1 rounded">Slide 7</span>
             <h2 class="text-3xl font-extrabold mt-3 mb-2 text-[#000d2d]">🧳 What's in our bag? (Polaroids)</h2>
             <p class="text-slate-600 text-sm mb-6">Survole les souvenirs instantanés pour les inspecter :</p>
 
             <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-6">
-                <!-- Polaroid 1 -->
                 <div class="polaroid bg-white p-3 pb-6 rounded shadow border border-slate-300 text-center">
                     <img src="https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=300&q=80" class="w-full h-32 object-cover mb-2 rounded-sm" alt="Casquette">
                     <span class="text-xs font-bold text-slate-700">Casquette Macker</span>
                 </div>
-                <!-- Polaroid 2 -->
                 <div class="polaroid bg-white p-3 pb-6 rounded shadow border border-slate-300 text-center">
                     <img src="https://images.unsplash.com/photo-1515238152791-8216bfdf89a7?auto=format&fit=crop&w=300&q=80" class="w-full h-32 object-cover mb-2 rounded-sm" alt="Red Bull">
                     <span class="text-xs font-bold text-slate-700">Coco Acaï Supply</span>
                 </div>
-                <!-- Polaroid 3 -->
                 <div class="polaroid bg-white p-3 pb-6 rounded shadow border border-slate-300 text-center">
                     <img src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&fit=crop&w=300&q=80" class="w-full h-32 object-cover mb-2 rounded-sm" alt="Polaroid">
                     <span class="text-xs font-bold text-slate-700">Mode Crari Insta</span>
                 </div>
-                <!-- Polaroid 4 -->
                 <div class="polaroid bg-white p-3 pb-6 rounded shadow border border-slate-300 text-center">
                     <img src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?auto=format&fit=crop&w=300&q=80" class="w-full h-32 object-cover mb-2 rounded-sm" alt="Passeport">
                     <span class="text-xs font-bold text-slate-700">Passeports VIP</span>
@@ -141,34 +134,34 @@
             </div>
         </div>
 
-        <!-- SLIDE 4 : MONTRÉAL & LOGEMENTS AIRBNB -->
+        <!-- SLIDE 4 : MONTRÉAL & LOGEMENTS CLIQUABLES -->
         <div id="slide-4" class="slide-section bg-white p-8 rounded-2xl shadow-xl border-2 border-[#000d2d]">
             <span class="text-xs font-bold text-[#fa4e05] uppercase bg-[#fcf1de] px-3 py-1 rounded">Slides 8 à 13</span>
             <h2 class="text-3xl font-extrabold mt-3 mb-2 text-[#000d2d]">🇨🇦 Montréal : F1, Hockey & Poutine</h2>
-            <p class="text-slate-700 mb-6 text-sm">Grand Prix du Canada, Centre Bell, smoked meats et ambiance montréalaise.</p>
+            <p class="text-slate-700 mb-6 text-sm">Grand Prix du Canada, Centre Bell, smoked meats et ambiance montréalaise. <strong class="text-[#fa4e05]">Clique sur un logement pour voir les détails !</strong></p>
 
-            <h3 class="font-bold text-lg mb-4 text-[#000d2d] flex items-center gap-2"><i class="fa-solid fa-house-chimney text-[#fa4e05]"></i> Sélection Airbnb / Logement Top Noté :</h3>
+            <h3 class="font-bold text-lg mb-4 text-[#000d2d] flex items-center gap-2"><i class="fa-solid fa-house-chimney text-[#fa4e05]"></i> Sélection Airbnb (Clique pour visiter) :</h3>
             <div class="grid md:grid-cols-2 gap-6 mb-6">
                 <!-- Logement 1 -->
-                <div class="bg-slate-50 rounded-xl overflow-hidden border shadow-sm">
+                <div onclick="openModal('Loft Industriel & Cosy — Vieux-Montréal', 'https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=800&q=80', '⭐ 4.96 (124 avis) — 120€ / nuit', 'Situé en plein cœur du Vieux-Montréal, ce loft baigné de lumière allie briques apparentes historiques et confort moderne. Idéal pour se reposer après une journée bruyante au Grand Prix de F1. Équipé d’un grand lit queen-size, d’une cuisine ouverte et d’une machine à espresso pour affronter le décalage horaire.')" class="bg-slate-50 rounded-xl overflow-hidden border-2 border-slate-200 shadow-sm cursor-pointer hover:border-[#fa4e05] transition transform hover:-translate-y-1">
                     <img src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=600&q=80" alt="Loft Montréal" class="h-40 w-full object-cover">
                     <div class="p-4">
                         <div class="flex justify-between items-center mb-1">
-                            <span class="font-bold text-sm text-slate-800">Loft Industriel & Cosy — Vieux-Montréal</span>
-                            <span class="text-xs bg-amber-100 text-amber-800 px-2 py-0.5 rounded font-bold">⭐ 4.96 (124 avis)</span>
+                            <span class="font-bold text-sm text-slate-800">Loft Industriel — Vieux-Montréal</span>
+                            <span class="text-xs bg-amber-100 text-amber-800 px-2 py-0.5 rounded font-bold">⭐ 4.96</span>
                         </div>
-                        <p class="text-xs text-slate-600">Brique apparente, cheminée, parfait pour se poser après le Grand Prix.</p>
+                        <p class="text-xs text-slate-600">Clique pour voir l'intérieur et les équipements 🔍</p>
                     </div>
                 </div>
                 <!-- Logement 2 -->
-                <div class="bg-slate-50 rounded-xl overflow-hidden border shadow-sm">
+                <div onclick="openModal('Design Apartment — Le Plateau', 'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=800&q=80', '⭐ 4.98 (92 avis) — 110€ / nuit', 'En plein quartier branché du Plateau-Mont-Royal, cet appartement est parfait pour tester les meilleurs bagels de la ville à pied. Déco hyper tendance, grand balcon pour chiller en amoureux et calme absolu la nuit.')" class="bg-slate-50 rounded-xl overflow-hidden border-2 border-slate-200 shadow-sm cursor-pointer hover:border-[#fa4e05] transition transform hover:-translate-y-1">
                     <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=600&q=80" alt="Appartement Plateau" class="h-40 w-full object-cover">
                     <div class="p-4">
                         <div class="flex justify-between items-center mb-1">
                             <span class="font-bold text-sm text-slate-800">Design Apartment — Le Plateau</span>
-                            <span class="text-xs bg-amber-100 text-amber-800 px-2 py-0.5 rounded font-bold">⭐ 4.98 (92 avis)</span>
+                            <span class="text-xs bg-amber-100 text-amber-800 px-2 py-0.5 rounded font-bold">⭐ 4.98</span>
                         </div>
-                        <p class="text-xs text-slate-600">Proche des meilleurs spots de bagels et à deux pas du métro.</p>
+                        <p class="text-xs text-slate-600">Clique pour voir l'intérieur et les équipements 🔍</p>
                     </div>
                 </div>
             </div>
@@ -179,34 +172,34 @@
             </div>
         </div>
 
-        <!-- SLIDE 5 : NEW YORK & LOGEMENTS AIRBNB -->
+        <!-- SLIDE 5 : NEW YORK & LOGEMENTS CLIQUABLES -->
         <div id="slide-5" class="slide-section bg-white p-8 rounded-2xl shadow-xl border-2 border-[#000d2d]">
             <span class="text-xs font-bold text-[#fa4e05] uppercase bg-[#fcf1de] px-3 py-1 rounded">Slides 14 à 17</span>
             <h2 class="text-3xl font-extrabold mt-3 mb-2 text-[#000d2d]">🇺🇸 New York & Date Night</h2>
-            <p class="text-slate-700 mb-6 text-sm">Manhattan illuminée, Rangers, et "No plans. Just us".</p>
+            <p class="text-slate-700 mb-6 text-sm">Manhattan illuminée, Rangers, et "No plans. Just us". <strong class="text-[#fa4e05]">Clique sur un logement pour voir les détails !</strong></p>
 
-            <h3 class="font-bold text-lg mb-4 text-[#000d2d] flex items-center gap-2"><i class="fa-solid fa-house-chimney text-[#fa4e05]"></i> Sélection Airbnb / Logement Top Noté :</h3>
+            <h3 class="font-bold text-lg mb-4 text-[#000d2d] flex items-center gap-2"><i class="fa-solid fa-house-chimney text-[#fa4e05]"></i> Sélection Airbnb (Clique pour visiter) :</h3>
             <div class="grid md:grid-cols-2 gap-6 mb-6">
                 <!-- Logement NY 1 -->
-                <div class="bg-slate-50 rounded-xl overflow-hidden border shadow-sm">
+                <div onclick="openModal('Chic Studio with View — Manhattan', 'https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=800&q=80', '⭐ 4.95 (210 avis) — 180€ / nuit', 'Un studio ultra chic situé à deux pas de Times Square et Central Park. Vue imprenable sur les gratte-ciels, lit king-size et tout le nécessaire pour démarrer une Date Night inoubliable dans Manhattan by night.')" class="bg-slate-50 rounded-xl overflow-hidden border-2 border-slate-200 shadow-sm cursor-pointer hover:border-[#fa4e05] transition transform hover:-translate-y-1">
                     <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=600&q=80" alt="Appart NY" class="h-40 w-full object-cover">
                     <div class="p-4">
                         <div class="flex justify-between items-center mb-1">
-                            <span class="font-bold text-sm text-slate-800">Chic Studio with View — Manhattan</span>
-                            <span class="text-xs bg-amber-100 text-amber-800 px-2 py-0.5 rounded font-bold">⭐ 4.95 (210 avis)</span>
+                            <span class="font-bold text-sm text-slate-800">Chic Studio — Manhattan</span>
+                            <span class="text-xs bg-amber-100 text-amber-800 px-2 py-0.5 rounded font-bold">⭐ 4.95</span>
                         </div>
-                        <p class="text-xs text-slate-600">En plein cœur de la Grosse Pomme, parfait pour un départ de date night.</p>
+                        <p class="text-xs text-slate-600">Clique pour voir l'intérieur et les équipements 🔍</p>
                     </div>
                 </div>
                 <!-- Logement NY 2 -->
-                <div class="bg-slate-50 rounded-xl overflow-hidden border shadow-sm">
+                <div onclick="openModal('Trendy Brooklyn Loft with Rooftop', 'https://images.unsplash.com/photo-1507089947368-19c1da9775ae?auto=format&fit=crop&w=800&q=80', '⭐ 4.99 (88 avis) — 160€ / nuit', 'Un loft artistique à Brooklyn avec un accès direct au rooftop partagé. Parfait pour admirer le coucher de soleil sur la skyline de Manhattan avec un verre avant de sortir.')" class="bg-slate-50 rounded-xl overflow-hidden border-2 border-slate-200 shadow-sm cursor-pointer hover:border-[#fa4e05] transition transform hover:-translate-y-1">
                     <img src="https://images.unsplash.com/photo-1507089947368-19c1da9775ae?auto=format&fit=crop&w=600&q=80" alt="Brooklyn Loft" class="h-40 w-full object-cover">
                     <div class="p-4">
                         <div class="flex justify-between items-center mb-1">
-                            <span class="font-bold text-sm text-slate-800">Trendy Brooklyn Loft with Rooftop</span>
-                            <span class="text-xs bg-amber-100 text-amber-800 px-2 py-0.5 rounded font-bold">⭐ 4.99 (88 avis)</span>
+                            <span class="font-bold text-sm text-slate-800">Trendy Brooklyn Loft + Rooftop</span>
+                            <span class="text-xs bg-amber-100 text-amber-800 px-2 py-0.5 rounded font-bold">⭐ 4.99</span>
                         </div>
-                        <p class="text-xs text-slate-600">Vue imprenable sur la skyline depuis le toit de l'immeuble.</p>
+                        <p class="text-xs text-slate-600">Clique pour voir l'intérieur et les équipements 🔍</p>
                     </div>
                 </div>
             </div>
@@ -217,7 +210,7 @@
             </div>
         </div>
 
-        <!-- SLIDE 6 : BUDGET & FOLIES (NOUVEAUTÉ) -->
+        <!-- SLIDE 6 : BUDGET & FOLIES -->
         <div id="slide-6" class="slide-section bg-white p-8 rounded-2xl shadow-xl border-2 border-[#000d2d]">
             <span class="text-xs font-bold text-[#fa4e05] uppercase bg-[#fcf1de] px-3 py-1 rounded">Dépenses & Folies</span>
             <h2 class="text-3xl font-extrabold mt-3 mb-2 text-[#000d2d]">💸 Jauge de Budget (Version Humour)</h2>
@@ -253,7 +246,6 @@
             <h2 class="text-3xl font-extrabold mt-3 mb-2 text-[#000d2d]">📊 Benchmark & Scores du Projet</h2>
             <p class="text-slate-600 text-sm mb-6">Glisse le curseur pour ajuster l'intensité du voyage et voir l'impact en temps réel !</p>
 
-            <!-- Contrôle Interactif -->
             <div class="bg-[#fcf1de] p-5 rounded-xl border-2 border-[#000d2d] mb-6 shadow-sm">
                 <label for="intensityRange" class="block font-bold text-sm text-[#000d2d] mb-2">
                     Niveau d'intensité du voyage : <span id="valIntensity" class="text-[#fa4e05] font-extrabold">100</span>%
@@ -261,7 +253,6 @@
                 <input type="range" id="intensityRange" min="50" max="200" step="10" value="100" class="w-full accent-[#fa4e05]">
             </div>
 
-            <!-- Grille des Résultats -->
             <div class="grid grid-cols-2 gap-4 text-center">
                 <div class="bg-slate-50 p-4 rounded-xl border shadow-sm">
                     <span class="text-xs font-bold text-slate-500 uppercase">Taux de compatibilité</span>
@@ -292,15 +283,31 @@
 
     </main>
 
-    <!-- Script de navigation, benchmark, budget et easter egg -->
+    <!-- FENÊTRE MODALE AIRBNB (POP-UP) -->
+    <div id="airbnbModal" class="fixed inset-0 bg-black/70 z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-2xl max-w-lg w-full overflow-hidden shadow-2xl border-4 border-[#000d2d] relative animate-fade-in">
+            <button onclick="closeModal()" class="absolute top-4 right-4 bg-[#000d2d] text-white w-8 h-8 rounded-full flex items-center justify-center font-bold hover:bg-[#fa4e05] transition">✕</button>
+            <img id="modalImg" src="" alt="Logement" class="w-full h-56 object-cover">
+            <div class="p-6">
+                <span id="modalBadge" class="text-xs bg-amber-100 text-amber-800 px-2.5 py-1 rounded font-bold uppercase"></span>
+                <h3 id="modalTitle" class="text-2xl font-extrabold text-[#000d2d] mt-2 mb-3"></h3>
+                <p id="modalDesc" class="text-slate-700 text-sm mb-6 leading-relaxed"></p>
+                <div class="flex justify-end">
+                    <button onclick="closeModal()" class="bg-[#fa4e05] text-white px-6 py-2.5 rounded-xl font-bold text-sm hover:bg-[#ba3208] transition">Fermer la visite</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Script global -->
     <script>
         const stepNames = {
             1: "1. Intro",
             2: "2. Cahier des Charges",
-            3: "3. Les Bagages",
+            3: "3. Bagages",
             4: "4. Montréal",
             5: "5. New York",
-            6: "6. Budget & Folies",
+            6: "6. Budget",
             7: "7. Benchmark"
         };
 
@@ -320,16 +327,32 @@
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
-        // Effet Confettis (Mode VIP)
         function triggerConfetti() {
-            confetti({
-                particleCount: 100,
-                spread: 70,
-                origin: { y: 0.6 }
-            });
+            confetti({ particleCount: 100, spread: 70, origin: { y: 0.6 } });
         }
 
-        // Logique du Benchmark (Compatibilité bloquée à 100% min)
+        // Fonctions pour la modale Airbnb
+        function openModal(title, imgUrl, badge, desc) {
+            document.getElementById('modalTitle').textContent = title;
+            document.getElementById('modalImg').src = imgUrl;
+            document.getElementById('modalBadge').textContent = badge;
+            document.getElementById('modalDesc').textContent = desc;
+            document.getElementById('airbnbModal').classList.remove('hidden');
+        }
+
+        function closeModal() {
+            document.getElementById('airbnbModal').classList.add('hidden');
+        }
+
+        // Fermer la modale si on clique en dehors
+        window.onclick = function(event) {
+            let modal = document.getElementById('airbnbModal');
+            if (event.target == modal) {
+                closeModal();
+            }
+        }
+
+        // Benchmark logique (100% min)
         const range = document.getElementById('intensityRange');
         const valIntensity = document.getElementById('valIntensity');
         const resCompat = document.getElementById('resCompat');
@@ -339,19 +362,16 @@
         range.addEventListener('input', (e) => {
             const val = e.target.value;
             valIntensity.textContent = val;
-            
             let compat = Math.max(100, Math.round(98.7 * (val / 100) * 10) / 10);
             if (val > 100) compat = Math.min(100 + Math.round((val - 100) / 5), 110);
-
             let bonheur = Math.round(143 * (val / 100));
             let global = Math.max(101.8, Math.round(101.8 * (val / 100) * 10) / 10);
-
             resCompat.textContent = compat + ' %';
             resBonheur.textContent = '+ ' + bonheur + ' %';
             resGlobal.textContent = global + ' %';
         });
 
-        // Logique de la jauge budget Red Bull
+        // Budget Red Bull
         const budgetRange = document.getElementById('budgetRange');
         const valRedBull = document.getElementById('valRedBull');
         const resRedBullCost = document.getElementById('resRedBullCost');
@@ -360,7 +380,7 @@
         budgetRange.addEventListener('input', (e) => {
             const count = e.target.value;
             valRedBull.textContent = count;
-            resRedBullCost.textContent = (count * 2 * 7) + ' €'; // ex: 2€ par canette sur 7 jours
+            resRedBullCost.textContent = (count * 2 * 7) + ' €';
             if (count > 7) {
                 resEnergy.textContent = "⚡ Alerte tachycardie assurée";
             } else if (count > 4) {
