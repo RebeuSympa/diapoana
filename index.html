@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Mission : GARDE TON NEZ</title>
+    <title>The Mission : Édition Ultime & Séduction</title>
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -14,12 +14,13 @@
         body { font-family: 'Hind', sans-serif; }
         .slide-section { display: none; }
         .slide-section.active { display: block; }
+        /* Effet Polaroid cliquable/au survol */
         .polaroid {
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
         .polaroid:hover {
-            transform: scale(1.05) rotate(2deg);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2);
+            transform: scale(1.06) rotate(3deg);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.25);
         }
     </style>
 </head>
@@ -30,7 +31,7 @@
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
             <div class="flex items-center space-x-3">
                 <i class="fa-solid fa-plane-departure text-2xl text-[#fa4e05]"></i>
-                <span class="text-xl font-extrabold tracking-wide">THE MISSION — Ultimate Edition</span>
+                <span class="text-xl font-extrabold tracking-wide">THE MISSION — Ultime Édition</span>
             </div>
             <div class="flex items-center space-x-3">
                 <button onclick="triggerConfetti()" class="bg-[#fa4e05] hover:bg-[#ba3208] text-white text-xs px-3 py-1.5 rounded-full font-bold shadow transition flex items-center gap-1">
@@ -43,16 +44,17 @@
         </div>
     </header>
 
-    <!-- Barre de télécommande -->
+    <!-- Barre de télécommande (Anti-spoiler) -->
     <section class="bg-white border-b-2 border-[#000d2d] py-3 shadow-md sticky top-[72px] z-40 overflow-x-auto">
         <div class="container mx-auto px-6 flex justify-start md:justify-center gap-2 min-w-max">
-            <button onclick="showSlide(1)" id="btn-1" class="slide-btn px-4 py-2 text-xs font-bold rounded-lg bg-[#000d2d] text-white transition shadow">1. Intro</button>
-            <button onclick="showSlide(2)" id="btn-2" class="slide-btn px-4 py-2 text-xs font-bold rounded-lg bg-slate-200 text-[#000d2d] hover:bg-slate-300 transition">2. Cahier des Charges</button>
-            <button onclick="showSlide(3)" id="btn-3" class="slide-btn px-4 py-2 text-xs font-bold rounded-lg bg-slate-200 text-[#000d2d] hover:bg-slate-300 transition">3. Bagages & Polaroids</button>
-            <button onclick="showSlide(4)" id="btn-4" class="slide-btn px-4 py-2 text-xs font-bold rounded-lg bg-slate-200 text-[#000d2d] hover:bg-slate-300 transition">4. Montréal & Logements</button>
-            <button onclick="showSlide(5)" id="btn-5" class="slide-btn px-4 py-2 text-xs font-bold rounded-lg bg-slate-200 text-[#000d2d] hover:bg-slate-300 transition">5. New York & Logements</button>
-            <button onclick="showSlide(6)" id="btn-6" class="slide-btn px-4 py-2 text-xs font-bold rounded-lg bg-slate-200 text-[#000d2d] hover:bg-slate-300 transition">6. Budget & Folies</button>
-            <button onclick="showSlide(7)" id="btn-7" class="slide-btn px-4 py-2 text-xs font-bold rounded-lg bg-slate-200 text-[#000d2d] hover:bg-slate-300 transition">7. Benchmark</button>
+            <button onclick="showSlide(1)" id="btn-1" class="slide-btn px-3 py-1.5 text-xs font-bold rounded-lg bg-[#000d2d] text-white transition shadow">1. Intro</button>
+            <button onclick="showSlide(2)" id="btn-2" class="slide-btn px-3 py-1.5 text-xs font-bold rounded-lg bg-slate-200 text-[#000d2d] hover:bg-slate-300 transition">2. Cahier des Charges</button>
+            <button onclick="showSlide(3)" id="btn-3" class="slide-btn px-3 py-1.5 text-xs font-bold rounded-lg bg-slate-200 text-[#000d2d] hover:bg-slate-300 transition">3. Bagages & Polaroids</button>
+            <button onclick="showSlide(4)" id="btn-4" class="slide-btn px-4 py-1.5 text-xs font-bold rounded-lg bg-slate-200 text-[#000d2d] hover:bg-slate-300 transition">4. Montréal</button>
+            <button onclick="showSlide(5)" id="btn-5" class="slide-btn px-4 py-1.5 text-xs font-bold rounded-lg bg-slate-200 text-[#000d2d] hover:bg-slate-300 transition">5. New York</button>
+            <button onclick="showSlide(6)" id="btn-6" class="slide-btn px-3 py-1.5 text-xs font-bold rounded-lg bg-slate-200 text-[#000d2d] hover:bg-slate-300 transition">6. Playlist & To-Do</button>
+            <button onclick="showSlide(7)" id="btn-7" class="slide-btn px-3 py-1.5 text-xs font-bold rounded-lg bg-slate-200 text-[#000d2d] hover:bg-slate-300 transition">7. Quiz & Séduction</button>
+            <button onclick="showSlide(8)" id="btn-8" class="slide-btn px-3 py-1.5 text-xs font-bold rounded-lg bg-slate-200 text-[#000d2d] hover:bg-slate-300 transition">8. Benchmark</button>
         </div>
     </section>
 
@@ -96,35 +98,38 @@
                     <span class="font-bold">❤️ Moments à deux & Date Night</span>
                 </label>
             </div>
-            <p class="text-xs font-bold text-slate-500 text-center uppercase tracking-wide">Difficulté : Impossible. Challenge accepted.</p>
             <div class="mt-8 flex justify-between">
                 <button onclick="showSlide(1)" class="text-slate-600 font-bold text-sm">⬅️ Précédent</button>
                 <button onclick="showSlide(3)" class="bg-[#fa4e05] hover:bg-[#ba3208] text-white px-6 py-3 rounded-full font-bold text-sm shadow transition">Suivant ➡️</button>
             </div>
         </div>
 
-        <!-- SLIDE 3 : BAGAGES & POLAROIDS -->
+        <!-- SLIDE 3 : BAGAGES & EFFET POLAROID (AVEC MACKER & RED BULL COCO ACAÏ) -->
         <div id="slide-3" class="slide-section bg-white p-8 rounded-2xl shadow-xl border-2 border-[#000d2d]">
             <span class="text-xs font-bold text-[#fa4e05] uppercase bg-[#fcf1de] px-3 py-1 rounded">Slide 7</span>
-            <h2 class="text-3xl font-extrabold mt-3 mb-2 text-[#000d2d]">🧳 What's in our bag? (Polaroids)</h2>
-            <p class="text-slate-600 text-sm mb-6">Survole les souvenirs instantanés pour les inspecter :</p>
+            <h2 class="text-3xl font-extrabold mt-3 mb-2 text-[#000d2d]">🧳 What's in our bag? (Effet Polaroid)</h2>
+            <p class="text-slate-600 text-sm mb-6">Survole les photos ci-dessous pour voir l'effet Polaroid dynamique :</p>
 
             <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-6">
-                <div class="polaroid bg-white p-3 pb-6 rounded shadow border border-slate-300 text-center">
-                    <img src="https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=300&q=80" class="w-full h-32 object-cover mb-2 rounded-sm" alt="Casquette">
-                    <span class="text-xs font-bold text-slate-700">Casquette Macker</span>
+                <!-- POLAROID 1 : MACKER -->
+                <div class="polaroid bg-white p-3 pb-6 rounded shadow-md border border-slate-300 text-center cursor-pointer">
+                    <img src="https://media.licdn.com/dms/image/v2/D4E03AQEl8rr2e09Qew/profile-displayphoto-scale_400_400/B4EZ0GUNZyG8Ak-/0/1773927457697?e=1790812800&v=beta&t=qkzsVctr7uEDyFNCJ20J4HH7y8wly58NzMjZEYGhXSQ" class="w-full h-32 object-cover mb-2 rounded-sm" alt="Macker">
+                    <span class="text-xs font-bold text-slate-700">Casquette Macker 🧢</span>
                 </div>
-                <div class="polaroid bg-white p-3 pb-6 rounded shadow border border-slate-300 text-center">
-                    <img src="https://images.unsplash.com/photo-1515238152791-8216bfdf89a7?auto=format&fit=crop&w=300&q=80" class="w-full h-32 object-cover mb-2 rounded-sm" alt="Red Bull">
-                    <span class="text-xs font-bold text-slate-700">Coco Acaï Supply</span>
+                <!-- POLAROID 2 : RED BULL COCO ACAÏ -->
+                <div class="polaroid bg-white p-3 pb-6 rounded shadow-md border border-slate-300 text-center cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1622483767028-3f66f32aef97?auto=format&fit=crop&w=300&q=80" class="w-full h-32 object-cover mb-2 rounded-sm" alt="Red Bull Coco Acaï">
+                    <span class="text-xs font-bold text-slate-700">Red Bull Coco Acaï 🥤</span>
                 </div>
-                <div class="polaroid bg-white p-3 pb-6 rounded shadow border border-slate-300 text-center">
+                <!-- POLAROID 3 : CRARI INSTA -->
+                <div class="polaroid bg-white p-3 pb-6 rounded shadow-md border border-slate-300 text-center cursor-pointer">
                     <img src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&fit=crop&w=300&q=80" class="w-full h-32 object-cover mb-2 rounded-sm" alt="Polaroid">
-                    <span class="text-xs font-bold text-slate-700">Mode Crari Insta</span>
+                    <span class="text-xs font-bold text-slate-700">Mode Crari Insta 📸</span>
                 </div>
-                <div class="polaroid bg-white p-3 pb-6 rounded shadow border border-slate-300 text-center">
+                <!-- POLAROID 4 : PASSEPORTS -->
+                <div class="polaroid bg-white p-3 pb-6 rounded shadow-md border border-slate-300 text-center cursor-pointer">
                     <img src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?auto=format&fit=crop&w=300&q=80" class="w-full h-32 object-cover mb-2 rounded-sm" alt="Passeport">
-                    <span class="text-xs font-bold text-slate-700">Passeports VIP</span>
+                    <span class="text-xs font-bold text-slate-700">Passeports VIP 🛂</span>
                 </div>
             </div>
 
@@ -134,35 +139,20 @@
             </div>
         </div>
 
-        <!-- SLIDE 4 : MONTRÉAL & LOGEMENTS CLIQUABLES -->
+        <!-- SLIDE 4 : MONTRÉAL -->
         <div id="slide-4" class="slide-section bg-white p-8 rounded-2xl shadow-xl border-2 border-[#000d2d]">
             <span class="text-xs font-bold text-[#fa4e05] uppercase bg-[#fcf1de] px-3 py-1 rounded">Slides 8 à 13</span>
             <h2 class="text-3xl font-extrabold mt-3 mb-2 text-[#000d2d]">🇨🇦 Montréal : F1, Hockey & Poutine</h2>
-            <p class="text-slate-700 mb-6 text-sm">Grand Prix du Canada, Centre Bell, smoked meats et ambiance montréalaise. <strong class="text-[#fa4e05]">Clique sur un logement pour voir les détails !</strong></p>
+            <p class="text-slate-700 mb-6 text-sm">Clique sur un logement pour inspecter les détails :</p>
 
-            <h3 class="font-bold text-lg mb-4 text-[#000d2d] flex items-center gap-2"><i class="fa-solid fa-house-chimney text-[#fa4e05]"></i> Sélection Airbnb (Clique pour visiter) :</h3>
             <div class="grid md:grid-cols-2 gap-6 mb-6">
-                <!-- Logement 1 -->
-                <div onclick="openModal('Loft Industriel & Cosy — Vieux-Montréal', 'https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=800&q=80', '⭐ 4.96 (124 avis) — 120€ / nuit', 'Situé en plein cœur du Vieux-Montréal, ce loft baigné de lumière allie briques apparentes historiques et confort moderne. Idéal pour se reposer après une journée bruyante au Grand Prix de F1. Équipé d’un grand lit queen-size, d’une cuisine ouverte et d’une machine à espresso pour affronter le décalage horaire.')" class="bg-slate-50 rounded-xl overflow-hidden border-2 border-slate-200 shadow-sm cursor-pointer hover:border-[#fa4e05] transition transform hover:-translate-y-1">
-                    <img src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=600&q=80" alt="Loft Montréal" class="h-40 w-full object-cover">
-                    <div class="p-4">
-                        <div class="flex justify-between items-center mb-1">
-                            <span class="font-bold text-sm text-slate-800">Loft Industriel — Vieux-Montréal</span>
-                            <span class="text-xs bg-amber-100 text-amber-800 px-2 py-0.5 rounded font-bold">⭐ 4.96</span>
-                        </div>
-                        <p class="text-xs text-slate-600">Clique pour voir l'intérieur et les équipements 🔍</p>
-                    </div>
+                <div onclick="openModal('Loft Industriel — Vieux-Montréal', 'https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=800&q=80', '⭐ 4.96 — 120€ / nuit', 'Loft lumineux en briques apparentes dans le Vieux-Montréal, parfait pour récupérer après le Grand Prix.')" class="bg-slate-50 rounded-xl overflow-hidden border-2 border-slate-200 shadow-sm cursor-pointer hover:border-[#fa4e05] transition">
+                    <img src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=600&q=80" class="h-36 w-full object-cover" alt="Montréal 1">
+                    <div class="p-4"><span class="font-bold text-sm">Loft Vieux-Montréal</span> <span class="text-xs bg-amber-100 text-amber-800 px-2 py-0.5 rounded font-bold float-right">⭐ 4.96</span></div>
                 </div>
-                <!-- Logement 2 -->
-                <div onclick="openModal('Design Apartment — Le Plateau', 'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=800&q=80', '⭐ 4.98 (92 avis) — 110€ / nuit', 'En plein quartier branché du Plateau-Mont-Royal, cet appartement est parfait pour tester les meilleurs bagels de la ville à pied. Déco hyper tendance, grand balcon pour chiller en amoureux et calme absolu la nuit.')" class="bg-slate-50 rounded-xl overflow-hidden border-2 border-slate-200 shadow-sm cursor-pointer hover:border-[#fa4e05] transition transform hover:-translate-y-1">
-                    <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=600&q=80" alt="Appartement Plateau" class="h-40 w-full object-cover">
-                    <div class="p-4">
-                        <div class="flex justify-between items-center mb-1">
-                            <span class="font-bold text-sm text-slate-800">Design Apartment — Le Plateau</span>
-                            <span class="text-xs bg-amber-100 text-amber-800 px-2 py-0.5 rounded font-bold">⭐ 4.98</span>
-                        </div>
-                        <p class="text-xs text-slate-600">Clique pour voir l'intérieur et les équipements 🔍</p>
-                    </div>
+                <div onclick="openModal('Design Apartment — Le Plateau', 'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=800&q=80', '⭐ 4.98 — 110€ / nuit', 'Quartier branché du Plateau-Mont-Royal, proche des meilleurs bagels.')" class="bg-slate-50 rounded-xl overflow-hidden border-2 border-slate-200 shadow-sm cursor-pointer hover:border-[#fa4e05] transition">
+                    <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=600&q=80" class="h-36 w-full object-cover" alt="Montréal 2">
+                    <div class="p-4"><span class="font-bold text-sm">Le Plateau Design</span> <span class="text-xs bg-amber-100 text-amber-800 px-2 py-0.5 rounded font-bold float-right">⭐ 4.98</span></div>
                 </div>
             </div>
 
@@ -172,76 +162,101 @@
             </div>
         </div>
 
-        <!-- SLIDE 5 : NEW YORK & LOGEMENTS CLIQUABLES -->
+        <!-- SLIDE 5 : NEW YORK -->
         <div id="slide-5" class="slide-section bg-white p-8 rounded-2xl shadow-xl border-2 border-[#000d2d]">
             <span class="text-xs font-bold text-[#fa4e05] uppercase bg-[#fcf1de] px-3 py-1 rounded">Slides 14 à 17</span>
             <h2 class="text-3xl font-extrabold mt-3 mb-2 text-[#000d2d]">🇺🇸 New York & Date Night</h2>
-            <p class="text-slate-700 mb-6 text-sm">Manhattan illuminée, Rangers, et "No plans. Just us". <strong class="text-[#fa4e05]">Clique sur un logement pour voir les détails !</strong></p>
+            <p class="text-slate-700 mb-6 text-sm">Clique sur un logement new-yorkais pour voir les détails :</p>
 
-            <h3 class="font-bold text-lg mb-4 text-[#000d2d] flex items-center gap-2"><i class="fa-solid fa-house-chimney text-[#fa4e05]"></i> Sélection Airbnb (Clique pour visiter) :</h3>
             <div class="grid md:grid-cols-2 gap-6 mb-6">
-                <!-- Logement NY 1 -->
-                <div onclick="openModal('Chic Studio with View — Manhattan', 'https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=800&q=80', '⭐ 4.95 (210 avis) — 180€ / nuit', 'Un studio ultra chic situé à deux pas de Times Square et Central Park. Vue imprenable sur les gratte-ciels, lit king-size et tout le nécessaire pour démarrer une Date Night inoubliable dans Manhattan by night.')" class="bg-slate-50 rounded-xl overflow-hidden border-2 border-slate-200 shadow-sm cursor-pointer hover:border-[#fa4e05] transition transform hover:-translate-y-1">
-                    <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=600&q=80" alt="Appart NY" class="h-40 w-full object-cover">
-                    <div class="p-4">
-                        <div class="flex justify-between items-center mb-1">
-                            <span class="font-bold text-sm text-slate-800">Chic Studio — Manhattan</span>
-                            <span class="text-xs bg-amber-100 text-amber-800 px-2 py-0.5 rounded font-bold">⭐ 4.95</span>
-                        </div>
-                        <p class="text-xs text-slate-600">Clique pour voir l'intérieur et les équipements 🔍</p>
-                    </div>
+                <div onclick="openModal('Chic Studio — Manhattan', 'https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=800&q=80', '⭐ 4.95 — 180€ / nuit', 'Studio ultra chic près de Times Square et Central Park pour démarrer la Date Night.')" class="bg-slate-50 rounded-xl overflow-hidden border-2 border-slate-200 shadow-sm cursor-pointer hover:border-[#fa4e05] transition">
+                    <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=600&q=80" class="h-36 w-full object-cover" alt="NY 1">
+                    <div class="p-4"><span class="font-bold text-sm">Studio Manhattan</span> <span class="text-xs bg-amber-100 text-amber-800 px-2 py-0.5 rounded font-bold float-right">⭐ 4.95</span></div>
                 </div>
-                <!-- Logement NY 2 -->
-                <div onclick="openModal('Trendy Brooklyn Loft with Rooftop', 'https://images.unsplash.com/photo-1507089947368-19c1da9775ae?auto=format&fit=crop&w=800&q=80', '⭐ 4.99 (88 avis) — 160€ / nuit', 'Un loft artistique à Brooklyn avec un accès direct au rooftop partagé. Parfait pour admirer le coucher de soleil sur la skyline de Manhattan avec un verre avant de sortir.')" class="bg-slate-50 rounded-xl overflow-hidden border-2 border-slate-200 shadow-sm cursor-pointer hover:border-[#fa4e05] transition transform hover:-translate-y-1">
-                    <img src="https://images.unsplash.com/photo-1507089947368-19c1da9775ae?auto=format&fit=crop&w=600&q=80" alt="Brooklyn Loft" class="h-40 w-full object-cover">
-                    <div class="p-4">
-                        <div class="flex justify-between items-center mb-1">
-                            <span class="font-bold text-sm text-slate-800">Trendy Brooklyn Loft + Rooftop</span>
-                            <span class="text-xs bg-amber-100 text-amber-800 px-2 py-0.5 rounded font-bold">⭐ 4.99</span>
-                        </div>
-                        <p class="text-xs text-slate-600">Clique pour voir l'intérieur et les équipements 🔍</p>
-                    </div>
+                <div onclick="openModal('Trendy Brooklyn Loft + Rooftop', 'https://images.unsplash.com/photo-1507089947368-19c1da9775ae?auto=format&fit=crop&w=800&q=80', '⭐ 4.99 — 160€ / nuit', 'Loft à Brooklyn avec rooftop pour admirer le coucher de soleil sur la skyline.')" class="bg-slate-50 rounded-xl overflow-hidden border-2 border-slate-200 shadow-sm cursor-pointer hover:border-[#fa4e05] transition">
+                    <img src="https://images.unsplash.com/photo-1507089947368-19c1da9775ae?auto=format&fit=crop&w=600&q=80" class="h-36 w-full object-cover" alt="NY 2">
+                    <div class="p-4"><span class="font-bold text-sm">Brooklyn Loft + Rooftop</span> <span class="text-xs bg-amber-100 text-amber-800 px-2 py-0.5 rounded font-bold float-right">⭐ 4.99</span></div>
                 </div>
             </div>
 
             <div class="mt-8 flex justify-between">
                 <button onclick="showSlide(4)" class="text-slate-600 font-bold text-sm">⬅️ Précédent</button>
-                <button onclick="showSlide(6)" class="bg-[#fa4e05] hover:bg-[#ba3208] text-white px-6 py-3 rounded-full font-bold text-sm shadow transition">Suivant (Budget) ➡️</button>
+                <button onclick="showSlide(6)" class="bg-[#fa4e05] hover:bg-[#ba3208] text-white px-6 py-3 rounded-full font-bold text-sm shadow transition">Suivant (Playlist & To-Do) ➡️</button>
             </div>
         </div>
 
-        <!-- SLIDE 6 : BUDGET & FOLIES -->
+        <!-- SLIDE 6 : PLAYLIST & TO-DO LIST PERSO -->
         <div id="slide-6" class="slide-section bg-white p-8 rounded-2xl shadow-xl border-2 border-[#000d2d]">
-            <span class="text-xs font-bold text-[#fa4e05] uppercase bg-[#fcf1de] px-3 py-1 rounded">Dépenses & Folies</span>
-            <h2 class="text-3xl font-extrabold mt-3 mb-2 text-[#000d2d]">💸 Jauge de Budget (Version Humour)</h2>
-            <p class="text-slate-600 text-sm mb-6">Simule le coût estimé des Red Bull Coco Acaï et des tickets de F1 :</p>
+            <span class="text-xs font-bold text-[#fa4e05] uppercase bg-[#fcf1de] px-3 py-1 rounded">Ambiance & Carnet</span>
+            <h2 class="text-3xl font-extrabold mt-3 mb-2 text-[#000d2d]">🎵 Playlist de l'Aventure & Sa To-Do List</h2>
+            <p class="text-slate-600 text-sm mb-6">Mets de la musique pour vous ambiancer, et notez ce qu'elle veut absolument faire :</p>
 
-            <div class="bg-[#fcf1de] p-5 rounded-xl border-2 border-[#000d2d] mb-6 shadow-sm">
-                <label for="budgetRange" class="block font-bold text-sm text-[#000d2d] mb-2">
-                    Consommation de Red Bull par jour : <span id="valRedBull" class="text-[#fa4e05] font-extrabold">3</span> canettes
-                </label>
-                <input type="range" id="budgetRange" min="1" max="10" step="1" value="3" class="w-full accent-[#fa4e05]">
+            <!-- Lecteur Spotify Intégré -->
+            <div class="mb-8">
+                <h3 class="font-bold text-sm text-[#000d2d] mb-2"><i class="fa-brands fa-spotify text-green-600"></i> Écouter la playlist officielle :</h3>
+                <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/37i9dQZF1EJKS87PbYGYYN?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
             </div>
 
-            <div class="grid grid-cols-2 gap-4 text-center mb-6">
-                <div class="bg-slate-50 p-4 rounded-xl border shadow-sm">
-                    <span class="text-xs font-bold text-slate-500 uppercase">Budget Red Bull / Semaine</span>
-                    <span id="resRedBullCost" class="text-2xl font-black block text-[#fa4e05] mt-1">42 €</span>
+            <!-- To-Do List interactive qu'elle peut modifier -->
+            <div class="bg-[#fcf1de] p-5 rounded-xl border-2 border-[#000d2d] shadow-sm">
+                <h3 class="font-bold text-md text-[#000d2d] mb-3"><i class="fa-solid fa-list-check text-[#fa4e05]"></i> Sa To-Do List pour le voyage :</h3>
+                <div id="todoContainer" class="space-y-2 mb-4">
+                    <label class="flex items-center space-x-2 bg-white p-2.5 rounded-lg border border-slate-300 cursor-pointer">
+                        <input type="checkbox" class="w-4 h-4 accent-[#fa4e05]">
+                        <span class="text-sm font-medium">Boire un chocolat chaud devant Central Park enneigé</span>
+                    </label>
+                    <label class="flex items-center space-x-2 bg-white p-2.5 rounded-lg border border-slate-300 cursor-pointer">
+                        <input type="checkbox" class="w-4 h-4 accent-[#fa4e05]">
+                        <span class="text-sm font-medium">Prendre une photo cliché dans un taxi jaune à NY</span>
+                    </label>
                 </div>
-                <div class="bg-slate-50 p-4 rounded-xl border shadow-sm">
-                    <span class="text-xs font-bold text-slate-500 uppercase">Niveau de Surdosage</span>
-                    <span id="resEnergy" class="text-2xl font-black block text-emerald-600 mt-1">🚀 Prêt pour la F1</span>
+                <div class="flex gap-2">
+                    <input type="text" id="newTodoInput" placeholder="Ajouter une envie (ex: Manger une gaufre)..." class="flex-1 px-3 py-2 text-sm rounded-lg border border-slate-300 focus:outline-none focus:border-[#fa4e05]">
+                    <button onclick="addTodoItem()" class="bg-[#000d2d] text-white px-4 py-2 text-sm font-bold rounded-lg hover:bg-[#fa4e05] transition">Ajouter</button>
                 </div>
             </div>
 
             <div class="mt-8 flex justify-between">
                 <button onclick="showSlide(5)" class="text-slate-600 font-bold text-sm">⬅️ Précédent</button>
-                <button onclick="showSlide(7)" class="bg-[#fa4e05] hover:bg-[#ba3208] text-white px-6 py-3 rounded-full font-bold text-sm shadow transition">Découvrir le Benchmark ➡️</button>
+                <button onclick="showSlide(7)" class="bg-[#fa4e05] hover:bg-[#ba3208] text-white px-6 py-3 rounded-full font-bold text-sm shadow transition">Passer au Quiz ➡️</button>
             </div>
         </div>
 
-        <!-- SLIDE 7 : BENCHMARK INTERACTIF -->
+        <!-- SLIDE 7 : QUIZ DE SÉDUCTION INTERACTIF -->
         <div id="slide-7" class="slide-section bg-white p-8 rounded-2xl shadow-xl border-2 border-[#000d2d]">
+            <span class="text-xs font-bold text-[#fa4e05] uppercase bg-[#fcf1de] px-3 py-1 rounded">Le Quiz Secret</span>
+            <h2 class="text-3xl font-extrabold mt-3 mb-2 text-[#000d2d]">🧠 Le Quiz de Compatibilité Ultime</h2>
+            <p class="text-slate-600 text-sm mb-6">Testez vos affinités avant le grand départ :</p>
+
+            <div class="space-y-6">
+                <div class="bg-slate-50 p-4 rounded-xl border">
+                    <p class="font-bold text-sm text-[#000d2d] mb-3">1. Qui va finir le plus accro aux Red Bull Coco Acaï ?</p>
+                    <div class="grid grid-cols-2 gap-3">
+                        <button onclick="answerQuiz(this, true)" class="p-2.5 text-xs font-bold rounded-lg bg-white border border-slate-300 hover:bg-[#fa4e05] hover:text-white transition">Toi (évidemment)</button>
+                        <button onclick="answerQuiz(this, true)" class="p-2.5 text-xs font-bold rounded-lg bg-white border border-slate-300 hover:bg-[#fa4e05] hover:text-white transition">Moi (zéro doute)</button>
+                    </div>
+                </div>
+                <div class="bg-slate-50 p-4 rounded-xl border">
+                    <p class="font-bold text-sm text-[#000d2d] mb-3">2. Qu'est-ce qui est le plus important pendant le voyage ?</p>
+                    <div class="grid grid-cols-2 gap-3">
+                        <button onclick="answerQuiz(this, true)" class="p-2.5 text-xs font-bold rounded-lg bg-white border border-slate-300 hover:bg-[#fa4e05] hover:text-white transition">La poutine et le hockey</button>
+                        <button onclick="answerQuiz(this, true)" class="p-2.5 text-xs font-bold rounded-lg bg-white border border-slate-300 hover:bg-[#fa4e05] hover:text-white transition">Les moments à deux ❤️</button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="quizResult" class="mt-6 hidden p-4 bg-emerald-100 text-emerald-900 rounded-xl font-bold text-center text-sm">
+                🎉 Résultat : 100% de compatibilité, le voyage est officiellement validé par l'algorithme !
+            </div>
+
+            <div class="mt-8 flex justify-between">
+                <button onclick="showSlide(6)" class="text-slate-600 font-bold text-sm">⬅️ Précédent</button>
+                <button onclick="showSlide(8)" class="bg-[#fa4e05] hover:bg-[#ba3208] text-white px-6 py-3 rounded-full font-bold text-sm shadow transition">Voir le Benchmark ➡️</button>
+            </div>
+        </div>
+
+        <!-- SLIDE 8 : BENCHMARK INTERACTIF -->
+        <div id="slide-8" class="slide-section bg-white p-8 rounded-2xl shadow-xl border-2 border-[#000d2d]">
             <span class="text-xs font-bold text-[#fa4e05] uppercase bg-[#fcf1de] px-3 py-1 rounded">Slides 18 à 21</span>
             <h2 class="text-3xl font-extrabold mt-3 mb-2 text-[#000d2d]">📊 Benchmark & Scores du Projet</h2>
             <p class="text-slate-600 text-sm mb-6">Glisse le curseur pour ajuster l'intensité du voyage et voir l'impact en temps réel !</p>
@@ -277,15 +292,15 @@
             </div>
             
             <div class="mt-6 text-left">
-                <button onclick="showSlide(6)" class="text-slate-600 font-bold text-sm">⬅️ Précédent</button>
+                <button onclick="showSlide(7)" class="text-slate-600 font-bold text-sm">⬅️ Précédent</button>
             </div>
         </div>
 
     </main>
 
-    <!-- FENÊTRE MODALE AIRBNB (POP-UP) -->
+    <!-- FENÊTRE MODALE AIRBNB -->
     <div id="airbnbModal" class="fixed inset-0 bg-black/70 z-50 hidden flex items-center justify-center p-4">
-        <div class="bg-white rounded-2xl max-w-lg w-full overflow-hidden shadow-2xl border-4 border-[#000d2d] relative animate-fade-in">
+        <div class="bg-white rounded-2xl max-w-lg w-full overflow-hidden shadow-2xl border-4 border-[#000d2d] relative">
             <button onclick="closeModal()" class="absolute top-4 right-4 bg-[#000d2d] text-white w-8 h-8 rounded-full flex items-center justify-center font-bold hover:bg-[#fa4e05] transition">✕</button>
             <img id="modalImg" src="" alt="Logement" class="w-full h-56 object-cover">
             <div class="p-6">
@@ -307,8 +322,9 @@
             3: "3. Bagages",
             4: "4. Montréal",
             5: "5. New York",
-            6: "6. Budget",
-            7: "7. Benchmark"
+            6: "6. Playlist & To-Do",
+            7: "7. Quiz",
+            8: "8. Benchmark"
         };
 
         function showSlide(n) {
@@ -331,7 +347,7 @@
             confetti({ particleCount: 100, spread: 70, origin: { y: 0.6 } });
         }
 
-        // Fonctions pour la modale Airbnb
+        // Modale Airbnb
         function openModal(title, imgUrl, badge, desc) {
             document.getElementById('modalTitle').textContent = title;
             document.getElementById('modalImg').src = imgUrl;
@@ -344,11 +360,39 @@
             document.getElementById('airbnbModal').classList.add('hidden');
         }
 
-        // Fermer la modale si on clique en dehors
         window.onclick = function(event) {
             let modal = document.getElementById('airbnbModal');
-            if (event.target == modal) {
-                closeModal();
+            if (event.target == modal) { closeModal(); }
+        }
+
+        // Ajout dynamique à la To-Do List
+        function addTodoItem() {
+            const input = document.getElementById('newTodoInput');
+            const text = input.value.trim();
+            if(text !== '') {
+                const container = document.getElementById('todoContainer');
+                const label = document.createElement('label');
+                label.className = "flex items-center space-x-2 bg-white p-2.5 rounded-lg border border-slate-300 cursor-pointer";
+                label.innerHTML = `<input type="checkbox" class="w-4 h-4 accent-[#fa4e05]"> <span class="text-sm font-medium">${text}</span>`;
+                container.appendChild(label);
+                input.value = '';
+            }
+        }
+
+        // Animation Quiz
+        let answeredCount = 0;
+        function answerQuiz(btn, isCorrect) {
+            btn.parentElement.querySelectorAll('button').forEach(b => {
+                b.classList.remove('bg-[#fa4e05]', 'text-white');
+                b.classList.add('bg-white', 'text-slate-800');
+            });
+            btn.classList.remove('bg-white', 'text-slate-800');
+            btn.classList.add('bg-[#fa4e05]', 'text-white');
+            
+            answeredCount++;
+            if(answeredCount >= 2) {
+                document.getElementById('quizResult').classList.remove('hidden');
+                confetti({ particleCount: 50, spread: 60, origin: { y: 0.8 } });
             }
         }
 
@@ -369,25 +413,6 @@
             resCompat.textContent = compat + ' %';
             resBonheur.textContent = '+ ' + bonheur + ' %';
             resGlobal.textContent = global + ' %';
-        });
-
-        // Budget Red Bull
-        const budgetRange = document.getElementById('budgetRange');
-        const valRedBull = document.getElementById('valRedBull');
-        const resRedBullCost = document.getElementById('resRedBullCost');
-        const resEnergy = document.getElementById('resEnergy');
-
-        budgetRange.addEventListener('input', (e) => {
-            const count = e.target.value;
-            valRedBull.textContent = count;
-            resRedBullCost.textContent = (count * 2 * 7) + ' €';
-            if (count > 7) {
-                resEnergy.textContent = "⚡ Alerte tachycardie assurée";
-            } else if (count > 4) {
-                resEnergy.textContent = "🔥 Mode Turbo Activé";
-            } else {
-                resEnergy.textContent = "🚀 Prêt pour la F1";
-            }
         });
     </script>
 
