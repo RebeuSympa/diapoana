@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Mission : Compagnon Interactif</title>
+    <title>The Mission : Compagnon Interactif & Logements</title>
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -17,129 +17,193 @@
 <body class="bg-[#fcf1de] text-[#000d2d] leading-relaxed">
 
     <!-- Header / Navigation -->
-    <header class="bg-[#000d2d] text-white shadow-md sticky top-0 z-50">
+    <header class="bg-[#000d2d] text-white shadow-lg sticky top-0 z-50">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
             <div class="flex items-center space-x-3">
-                <i class="fa-solid fa-sliders text-2xl text-[#fa4e05]"></i>
-                <span class="text-xl font-bold tracking-wide">Compagnon & Benchmark Live</span>
+                <i class="fa-solid fa-plane-departure text-2xl text-[#fa4e05]"></i>
+                <span class="text-xl font-extrabold tracking-wide">THE MISSION — Live Companion</span>
             </div>
-            <div class="text-xs bg-[#fa4e05] text-white px-3 py-1 rounded-full font-bold">
+            <div class="text-xs bg-[#fa4e05] text-white px-3 py-1.5 rounded-full font-bold uppercase tracking-wider">
                 Étape : <span id="currentStepName">1. Introduction</span>
             </div>
         </div>
     </header>
 
     <!-- Barre de télécommande (Anti-spoiler) -->
-    <section class="bg-white border-b-2 border-[#000d2d] py-3 shadow-sm sticky top-[72px] z-40 overflow-x-auto">
+    <section class="bg-white border-b-2 border-[#000d2d] py-3 shadow-md sticky top-[72px] z-40 overflow-x-auto">
         <div class="container mx-auto px-6 flex justify-start md:justify-center gap-2 min-w-max">
-            <button onclick="showSlide(1)" id="btn-1" class="slide-btn px-3 py-1.5 text-xs font-bold rounded-lg bg-[#000d2d] text-white transition">1. Intro</button>
-            <button onclick="showSlide(2)" id="btn-2" class="slide-btn px-3 py-1.5 text-xs font-bold rounded-lg bg-slate-200 text-[#000d2d] hover:bg-slate-300 transition">2. Le Cahier des Charges</button>
-            <button onclick="showSlide(3)" id="btn-3" class="slide-btn px-3 py-1.5 text-xs font-bold rounded-lg bg-slate-200 text-[#000d2d] hover:bg-slate-300 transition">3. Les Bagages</button>
-            <button onclick="showSlide(4)" id="btn-4" class="slide-btn px-3 py-1.5 text-xs font-bold rounded-lg bg-slate-200 text-[#000d2d] hover:bg-slate-300 transition">4. Montréal</button>
-            <button onclick="showSlide(5)" id="btn-5" class="slide-btn px-3 py-1.5 text-xs font-bold rounded-lg bg-slate-200 text-[#000d2d] hover:bg-slate-300 transition">5. New York</button>
-            <button onclick="showSlide(6)" id="btn-6" class="slide-btn px-3 py-1.5 text-xs font-bold rounded-lg bg-slate-200 text-[#000d2d] hover:bg-slate-300 transition">6. Benchmark & Scores</button>
+            <button onclick="showSlide(1)" id="btn-1" class="slide-btn px-4 py-2 text-xs font-bold rounded-lg bg-[#000d2d] text-white transition shadow">1. Intro</button>
+            <button onclick="showSlide(2)" id="btn-2" class="slide-btn px-4 py-2 text-xs font-bold rounded-lg bg-slate-200 text-[#000d2d] hover:bg-slate-300 transition">2. Cahier des Charges</button>
+            <button onclick="showSlide(3)" id="btn-3" class="slide-btn px-4 py-2 text-xs font-bold rounded-lg bg-slate-200 text-[#000d2d] hover:bg-slate-300 transition">3. Les Bagages</button>
+            <button onclick="showSlide(4)" id="btn-4" class="slide-btn px-4 py-2 text-xs font-bold rounded-lg bg-slate-200 text-[#000d2d] hover:bg-slate-300 transition">4. Montréal & Logements</button>
+            <button onclick="showSlide(5)" id="btn-5" class="slide-btn px-4 py-2 text-xs font-bold rounded-lg bg-slate-200 text-[#000d2d] hover:bg-slate-300 transition">5. New York & Logements</button>
+            <button onclick="showSlide(6)" id="btn-6" class="slide-btn px-4 py-2 text-xs font-bold rounded-lg bg-slate-200 text-[#000d2d] hover:bg-slate-300 transition">6. Benchmark & Scores</button>
         </div>
     </section>
 
     <!-- Contenu des slides -->
-    <main class="container mx-auto px-6 py-10 max-w-3xl">
+    <main class="container mx-auto px-6 py-10 max-w-4xl">
 
         <!-- SLIDE 1 -->
-        <div id="slide-1" class="slide-section active bg-white p-8 rounded-2xl shadow-lg border-2 border-[#000d2d]">
-            <span class="text-xs font-bold text-[#fa4e05] uppercase">Slides 1 à 5</span>
-            <h2 class="text-3xl font-extrabold mt-2 mb-4">Toc toc ? On commence...[cite: 1]</h2>
-            <p class="text-slate-700 mb-6">Séminaire de Team Building Stratégique & Décarbonation du Stress[cite: 1].</p>
+        <div id="slide-1" class="slide-section active bg-white p-8 rounded-2xl shadow-xl border-2 border-[#000d2d]">
+            <div class="relative h-64 rounded-xl overflow-hidden mb-6 shadow-md">
+                <img src="https://images.unsplash.com/photo-1508739773434-c26b3d09e071?auto=format&fit=crop&w=1200&q=80" alt="Voyage" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-gradient-to-t from-[#000d2d] opacity-70"></div>
+                <h2 class="absolute bottom-4 left-6 text-3xl font-extrabold text-white">Toc toc ? On commence...</h2>
+            </div>
+            <p class="text-slate-700 text-lg mb-6">Séminaire de Team Building Stratégique & Décarbonation du Stress.</p>
             <div class="mt-8 text-right">
-                <button onclick="showSlide(2)" class="bg-[#fa4e05] text-white px-6 py-2 rounded-full font-bold text-sm hover:bg-[#ba3208]">Suivant ➡️</button>
+                <button onclick="showSlide(2)" class="bg-[#fa4e05] hover:bg-[#ba3208] text-white px-6 py-3 rounded-full font-bold text-sm shadow transition">Suivant ➡️</button>
             </div>
         </div>
 
         <!-- SLIDE 2 -->
-        <div id="slide-2" class="slide-section bg-white p-8 rounded-2xl shadow-lg border-2 border-[#000d2d]">
-            <span class="text-xs font-bold text-[#fa4e05] uppercase">Slide 6</span>
-            <h2 class="text-3xl font-extrabold mt-2 mb-4">Le Cahier des Charges 🏎️🏒</h2>
-            <p class="text-slate-700 mb-4">Objectif : Finir sur Netflix[cite: 1]. Conditions obligatoires : F1, Hockey, bouffe indécente, moments à deux[cite: 1].</p>
+        <div id="slide-2" class="slide-section bg-white p-8 rounded-2xl shadow-xl border-2 border-[#000d2d]">
+            <span class="text-xs font-bold text-[#fa4e05] uppercase bg-[#fcf1de] px-3 py-1 rounded">Slide 6</span>
+            <h2 class="text-3xl font-extrabold mt-3 mb-4 text-[#000d2d]">Le Cahier des Charges 🏎️🏒</h2>
+            <p class="text-slate-700 mb-6 font-medium">Objectif : Finir sur Netflix. Pour valider le voyage, conditions obligatoires :</p>
+            <div class="grid grid-cols-2 gap-4 mb-6">
+                <div class="p-4 bg-[#fcf1de] rounded-xl border-2 border-[#000d2d] font-bold text-center">🏎️ F1</div>
+                <div class="p-4 bg-[#fcf1de] rounded-xl border-2 border-[#000d2d] font-bold text-center">🏒 Hockey</div>
+                <div class="p-4 bg-[#fcf1de] rounded-xl border-2 border-[#000d2d] font-bold text-center">🍜 Bouffe indécente</div>
+                <div class="p-4 bg-[#fcf1de] rounded-xl border-2 border-[#000d2d] font-bold text-center">❤️ Moments à deux</div>
+            </div>
+            <p class="text-xs font-bold text-slate-500 text-center uppercase tracking-wide">Difficulté : Impossible. Challenge accepted.</p>
             <div class="mt-8 flex justify-between">
                 <button onclick="showSlide(1)" class="text-slate-600 font-bold text-sm">⬅️ Précédent</button>
-                <button onclick="showSlide(3)" class="bg-[#fa4e05] text-white px-6 py-2 rounded-full font-bold text-sm hover:bg-[#ba3208]">Suivant ➡️</button>
+                <button onclick="showSlide(3)" class="bg-[#fa4e05] hover:bg-[#ba3208] text-white px-6 py-3 rounded-full font-bold text-sm shadow transition">Suivant ➡️</button>
             </div>
         </div>
 
         <!-- SLIDE 3 -->
-        <div id="slide-3" class="slide-section bg-white p-8 rounded-2xl shadow-lg border-2 border-[#000d2d]">
-            <span class="text-xs font-bold text-[#fa4e05] uppercase">Slide 7</span>
-            <h2 class="text-3xl font-extrabold mt-2 mb-4">🧳 What's in our bag?</h2>
-            <p class="text-slate-700 mb-4">Casquette de Macker, bonnet des Canadiens, Polaroid, Red Bull Coco Acaï et passeports[cite: 1] !</p>
+        <div id="slide-3" class="slide-section bg-white p-8 rounded-2xl shadow-xl border-2 border-[#000d2d]">
+            <span class="text-xs font-bold text-[#fa4e05] uppercase bg-[#fcf1de] px-3 py-1 rounded">Slide 7</span>
+            <h2 class="text-3xl font-extrabold mt-3 mb-4 text-[#000d2d]">🧳 What's in our bag?</h2>
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mb-6">
+                <div class="p-4 bg-slate-50 rounded-xl border text-center font-semibold text-sm shadow-sm">🧢 Casquette de Macker</div>
+                <div class="p-4 bg-slate-50 rounded-xl border text-center font-semibold text-sm shadow-sm">🏒 Bonnet des Canadiens</div>
+                <div class="p-4 bg-slate-50 rounded-xl border text-center font-semibold text-sm shadow-sm">📸 Polaroid (crari insta)</div>
+                <div class="p-4 bg-slate-50 rounded-xl border text-center font-semibold text-sm shadow-sm">🥤 Red Bull Coco Acaï</div>
+                <div class="p-4 bg-slate-50 rounded-xl border text-center font-semibold text-sm shadow-sm">🛂 Passeports (très important)</div>
+            </div>
             <div class="mt-8 flex justify-between">
                 <button onclick="showSlide(2)" class="text-slate-600 font-bold text-sm">⬅️ Précédent</button>
-                <button onclick="showSlide(4)" class="bg-[#fa4e05] text-white px-6 py-2 rounded-full font-bold text-sm hover:bg-[#ba3208]">Suivant ➡️</button>
+                <button onclick="showSlide(4)" class="bg-[#fa4e05] hover:bg-[#ba3208] text-white px-6 py-3 rounded-full font-bold text-sm shadow transition">Suivant ➡️</button>
             </div>
         </div>
 
-        <!-- SLIDE 4 -->
-        <div id="slide-4" class="slide-section bg-white p-8 rounded-2xl shadow-lg border-2 border-[#000d2d]">
-            <span class="text-xs font-bold text-[#fa4e05] uppercase">Slides 8 à 13</span>
-            <h2 class="text-3xl font-extrabold mt-2 mb-4">🇨🇦 Montréal : F1 & Poutine</h2>
-            <div class="mb-4 bg-slate-100 h-48 rounded-xl flex items-center justify-center border-2 border-dashed border-slate-300 text-slate-400 text-sm">
-                <span>[ Emplacement photo logement / Montréal ]</span>
+        <!-- SLIDE 4 : MONTRÉAL & LOGEMENTS AIRBNB -->
+        <div id="slide-4" class="slide-section bg-white p-8 rounded-2xl shadow-xl border-2 border-[#000d2d]">
+            <span class="text-xs font-bold text-[#fa4e05] uppercase bg-[#fcf1de] px-3 py-1 rounded">Slides 8 à 13</span>
+            <h2 class="text-3xl font-extrabold mt-3 mb-2 text-[#000d2d]">🇨🇦 Montréal : F1, Hockey & Poutine</h2>
+            <p class="text-slate-700 mb-6 text-sm">Grand Prix du Canada, Centre Bell, smoked meats et ambiance montréalaise.</p>
+
+            <h3 class="font-bold text-lg mb-4 text-[#000d2d] flex items-center gap-2"><i class="fa-solid fa-house-chimney text-[#fa4e05]"></i> Sélection Airbnb / Logement Top Noté :</h3>
+            <div class="grid md:grid-cols-2 gap-6 mb-6">
+                <!-- Logement 1 -->
+                <div class="bg-slate-50 rounded-xl overflow-hidden border shadow-sm">
+                    <img src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=600&q=80" alt="Loft Montréal" class="h-40 w-full object-cover">
+                    <div class="p-4">
+                        <div class="flex justify-between items-center mb-1">
+                            <span class="font-bold text-sm text-slate-800">Loft Industriel & Cosy — Vieux-Montréal</span>
+                            <span class="text-xs bg-amber-100 text-amber-800 px-2 py-0.5 rounded font-bold">⭐ 4.96 (124 avis)</span>
+                        </div>
+                        <p class="text-xs text-slate-600">Brique apparente, cheminée, parfait pour se poser après le Grand Prix.</p>
+                    </div>
+                </div>
+                <!-- Logement 2 -->
+                <div class="bg-slate-50 rounded-xl overflow-hidden border shadow-sm">
+                    <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=600&q=80" alt="Appartement Plateau" class="h-40 w-full object-cover">
+                    <div class="p-4">
+                        <div class="flex justify-between items-center mb-1">
+                            <span class="font-bold text-sm text-slate-800">Design Apartment — Le Plateau</span>
+                            <span class="text-xs bg-amber-100 text-amber-800 px-2 py-0.5 rounded font-bold">⭐ 4.98 (92 avis)</span>
+                        </div>
+                        <p class="text-xs text-slate-600">Proche des meilleurs spots de bagels et à deux pas du métro.</p>
+                    </div>
+                </div>
             </div>
-            <p class="text-slate-700 mb-4">Grand Prix du Canada, Centre Bell, smoked meats et bagels[cite: 1].</p>
+
             <div class="mt-8 flex justify-between">
                 <button onclick="showSlide(3)" class="text-slate-600 font-bold text-sm">⬅️ Précédent</button>
-                <button onclick="showSlide(5)" class="bg-[#fa4e05] text-white px-6 py-2 rounded-full font-bold text-sm hover:bg-[#ba3208]">Suivant ➡️</button>
+                <button onclick="showSlide(5)" class="bg-[#fa4e05] hover:bg-[#ba3208] text-white px-6 py-3 rounded-full font-bold text-sm shadow transition">Suivant ➡️</button>
             </div>
         </div>
 
-        <!-- SLIDE 5 -->
-        <div id="slide-5" class="slide-section bg-white p-8 rounded-2xl shadow-lg border-2 border-[#000d2d]">
-            <span class="text-xs font-bold text-[#fa4e05] uppercase">Slides 14 à 17</span>
-            <h2 class="text-3xl font-extrabold mt-2 mb-4">🇺🇸 New York & Date Night</h2>
-            <div class="mb-4 bg-slate-100 h-48 rounded-xl flex items-center justify-center border-2 border-dashed border-slate-300 text-slate-400 text-sm">
-                <span>[ Emplacement photo logement / NY ]</span>
+        <!-- SLIDE 5 : NEW YORK & LOGEMENTS AIRBNB -->
+        <div id="slide-5" class="slide-section bg-white p-8 rounded-2xl shadow-xl border-2 border-[#000d2d]">
+            <span class="text-xs font-bold text-[#fa4e05] uppercase bg-[#fcf1de] px-3 py-1 rounded">Slides 14 à 17</span>
+            <h2 class="text-3xl font-extrabold mt-3 mb-2 text-[#000d2d]">🇺🇸 New York & Date Night</h2>
+            <p class="text-slate-700 mb-6 text-sm">Manhattan illuminée, Rangers, et "No plans. Just us".</p>
+
+            <h3 class="font-bold text-lg mb-4 text-[#000d2d] flex items-center gap-2"><i class="fa-solid fa-house-chimney text-[#fa4e05]"></i> Sélection Airbnb / Logement Top Noté :</h3>
+            <div class="grid md:grid-cols-2 gap-6 mb-6">
+                <!-- Logement NY 1 -->
+                <div class="bg-slate-50 rounded-xl overflow-hidden border shadow-sm">
+                    <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=600&q=80" alt="Appart NY" class="h-40 w-full object-cover">
+                    <div class="p-4">
+                        <div class="flex justify-between items-center mb-1">
+                            <span class="font-bold text-sm text-slate-800">Chic Studio with View — Manhattan</span>
+                            <span class="text-xs bg-amber-100 text-amber-800 px-2 py-0.5 rounded font-bold">⭐ 4.95 (210 avis)</span>
+                        </div>
+                        <p class="text-xs text-slate-600">En plein cœur de la Grosse Pomme, parfait pour un départ de date night.</p>
+                    </div>
+                </div>
+                <!-- Logement NY 2 -->
+                <div class="bg-slate-50 rounded-xl overflow-hidden border shadow-sm">
+                    <img src="https://images.unsplash.com/photo-1507089947368-19c1da9775ae?auto=format&fit=crop&w=600&q=80" alt="Brooklyn Loft" class="h-40 w-full object-cover">
+                    <div class="p-4">
+                        <div class="flex justify-between items-center mb-1">
+                            <span class="font-bold text-sm text-slate-800">Trendy Brooklyn Loft with Rooftop</span>
+                            <span class="text-xs bg-amber-100 text-amber-800 px-2 py-0.5 rounded font-bold">⭐ 4.99 (88 avis)</span>
+                        </div>
+                        <p class="text-xs text-slate-600">Vue imprenable sur la skyline depuis le toit de l'immeuble.</p>
+                    </div>
+                </div>
             </div>
-            <p class="text-slate-700 mb-4">Manhattan illuminée, Rangers, et "No plans. Just us"[cite: 1].</p>
+
             <div class="mt-8 flex justify-between">
                 <button onclick="showSlide(4)" class="text-slate-600 font-bold text-sm">⬅️ Précédent</button>
-                <button onclick="showSlide(6)" class="bg-[#fa4e05] text-white px-6 py-2 rounded-full font-bold text-sm hover:bg-[#ba3208]">Découvrir le Benchmark ➡️</button>
+                <button onclick="showSlide(6)" class="bg-[#fa4e05] hover:bg-[#ba3208] text-white px-6 py-3 rounded-full font-bold text-sm shadow transition">Découvrir le Benchmark ➡️</button>
             </div>
         </div>
 
         <!-- SLIDE 6 : BENCHMARK INTERACTIF -->
-        <div id="slide-6" class="slide-section bg-white p-8 rounded-2xl shadow-lg border-2 border-[#000d2d]">
-            <span class="text-xs font-bold text-[#fa4e05] uppercase">Slides 18 à 21</span>
-            <h2 class="text-3xl font-extrabold mt-2 mb-2">📊 Benchmark & Scores du Projet</h2>
-            <p class="text-slate-600 text-sm mb-6">Glisse le curseur pour ajuster l'ambition du voyage et voir l'impact en temps réel sur les indicateurs clés[cite: 1] !</p>
+        <div id="slide-6" class="slide-section bg-white p-8 rounded-2xl shadow-xl border-2 border-[#000d2d]">
+            <span class="text-xs font-bold text-[#fa4e05] uppercase bg-[#fcf1de] px-3 py-1 rounded">Slides 18 à 21</span>
+            <h2 class="text-3xl font-extrabold mt-3 mb-2 text-[#000d2d]">📊 Benchmark & Scores du Projet</h2>
+            <p class="text-slate-600 text-sm mb-6">Glisse le curseur pour ajuster l'intensité du voyage et voir l'impact en temps réel !</p>
 
-            <!-- Contrôle Interactif (Slider) -->
-            <div class="bg-[#fcf1de] p-5 rounded-xl border border-slate-300 mb-6">
+            <!-- Contrôle Interactif -->
+            <div class="bg-[#fcf1de] p-5 rounded-xl border-2 border-[#000d2d] mb-6 shadow-sm">
                 <label for="intensityRange" class="block font-bold text-sm text-[#000d2d] mb-2">
-                    Niveau d'intensité du voyage : <span id="valIntensity" class="text-[#fa4e05]">100</span>%
+                    Niveau d'intensité du voyage : <span id="valIntensity" class="text-[#fa4e05] font-extrabold">100</span>%
                 </label>
                 <input type="range" id="intensityRange" min="50" max="200" step="10" value="100" class="w-full accent-[#fa4e05]">
             </div>
 
-            <!-- Grille des Résultats / Benchmark dynamique -->
+            <!-- Grille des Résultats -->
             <div class="grid grid-cols-2 gap-4 text-center">
-                <div class="bg-slate-50 p-4 rounded-xl border">
+                <div class="bg-slate-50 p-4 rounded-xl border shadow-sm">
                     <span class="text-xs font-bold text-slate-500 uppercase">Taux de compatibilité</span>
                     <span id="resCompat" class="text-2xl font-black block text-[#fa4e05] mt-1">98,7 %</span>
                 </div>
-                <div class="bg-slate-50 p-4 rounded-xl border">
+                <div class="bg-slate-50 p-4 rounded-xl border shadow-sm">
                     <span class="text-xs font-bold text-slate-500 uppercase">Potentiel de bonheur</span>
                     <span id="resBonheur" class="text-2xl font-black block text-emerald-600 mt-1">+ 143 %</span>
                 </div>
-                <div class="bg-slate-50 p-4 rounded-xl border">
+                <div class="bg-slate-50 p-4 rounded-xl border shadow-sm">
                     <span class="text-xs font-bold text-slate-500 uppercase">Qualité Gastronomique</span>
-                    <span class="text-2xl font-black block text-indigo-600 mt-1">11 / 10</span>
+                    <span id="resGastro" class="text-2xl font-black block text-indigo-600 mt-1">11 / 10</span>
                 </div>
-                <div class="bg-[#000d2d] text-white p-4 rounded-xl">
+                <div class="bg-[#000d2d] text-white p-4 rounded-xl shadow-md">
                     <span class="text-xs font-bold uppercase text-slate-300">Score Global Skema</span>
                     <span id="resGlobal" class="text-2xl font-black block text-[#fa4e05] mt-1">101,8 %</span>
                 </div>
             </div>
 
-            <div class="mt-8 text-center text-xs text-slate-500">
-                <p>Conclusion (Slide 20) : C’est ciao mon doudouwww ❤️[cite: 1]</p>
+            <div class="mt-8 text-center bg-[#fcf1de] p-4 rounded-xl border border-[#000d2d]">
+                <p class="font-bold text-sm text-[#000d2d]">Conclusion (Slide 20) : C’est ciao mon doudouwww ❤️</p>
             </div>
             
             <div class="mt-6 text-left">
@@ -149,7 +213,7 @@
 
     </main>
 
-    <!-- Script de navigation et du benchmark interactif -->
+    <!-- Script de navigation et benchmark -->
     <script>
         const stepNames = {
             1: "1. Intro",
@@ -165,18 +229,17 @@
             document.getElementById('slide-' + n).classList.add('active');
             
             document.querySelectorAll('.slide-btn').forEach(btn => {
-                btn.classList.remove('bg-[#000d2d]', 'text-white');
+                btn.classList.remove('bg-[#000d2d]', 'text-white', 'shadow');
                 btn.classList.add('bg-slate-200', 'text-[#000d2d]');
             });
             const activeBtn = document.getElementById('btn-' + n);
             activeBtn.classList.remove('bg-slate-200', 'text-[#000d2d]');
-            activeBtn.classList.add('bg-[#000d2d]', 'text-white');
+            activeBtn.classList.add('bg-[#000d2d]', 'text-white', 'shadow');
 
             document.getElementById('currentStepName').textContent = stepNames[n];
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
-        // Logique du benchmark interactif
         const range = document.getElementById('intensityRange');
         const valIntensity = document.getElementById('valIntensity');
         const resCompat = document.getElementById('resCompat');
@@ -187,7 +250,6 @@
             const val = e.target.value;
             valIntensity.textContent = val;
             
-            // Calculs dynamiques basés sur le curseur
             let compat = Math.min(Math.round(98.7 * (val / 100) * 10) / 10, 100);
             let bonheur = Math.round(143 * (val / 100));
             let global = Math.min(Math.round(101.8 * (val / 100) * 10) / 10, 999);
